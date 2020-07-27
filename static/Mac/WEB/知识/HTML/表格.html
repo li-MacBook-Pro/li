@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        table{
+            /*border:10px;*/
+            width:600px;/*表格宽带*/
+            height:100px;/*表格高度*/
+            /*cellspacing:0;*/
+            border-spacing: 0;
+            padding:15px;
+            /*background-color:olivedrab;*/
+            /*background="";*/
+        }
+    </style>
+
+</head>
+<body>
+<h1 style="text-align: center;width: 100%;"><a href="https://www.w3school.com.cn/tags/tag_table.asp" target="_blank" >表格</a></h1>
+<h3>表格由 table 标签来定义。每个表格均有若干行（由 tr 标签定义），每行被分割为若干单元格（由 td 标签定义）。<br>
+    表格的表头使用 th 标签进行定义。<br>
+    字母 td 指表格数据（table data），即数据单元格的内容。数据单元格可以包含文本、图片、列表、段落、表单、水平线、表格等等。<br>
+    border:边框的大小，值为0，则没有边框。border属性设置的表格边框只能影响表格四周的边框宽度，而并不能影响单元格之间边框的尺寸。
+        虽然设置边框宽度没有限制，但是一般边框设置不应超过5像素，过于宽大的边框会影响表格的整体美观。<br>
+    border-spacing 属性指定相邻单元格边框之间的距离（只适用于 边框分离模式 ）。
+        相当于 HTML 中的 cellspacing 属性，但是第二个可选的值可以用来设置不同于水平间距的垂直间距。
+    border-spacing 值也适用于表格的外层边框上，即表格的边框和第一行的、第一列的、最后一行的、最后一列的单元格之间的间距是由表格相应的（水平的或垂直的） 边框间距（border-spacing）和相应的（上，右，下或左）内边距之和。
+        该属性只适用于 border-collapse 值是 separate 的时候。<br>
+        在一些浏览器中，没有内容的表格单元显示得不太好。如果某个单元格是空的（没有内容），浏览器可能无法显示出这个单元格的边框。
+        为了避免这种情况，在空单元格中添加一个空格占位符，就可以将边框显示出来。<br>
+    align:文字的水平对齐方式,可以使用表格的align属性来设置表格的对齐方式。 语法:table align="对齐方式left right center" <br>
+    valign:行文字的垂直对齐方式valign valign="垂直对齐方式" <br>
+    跨行合并rowspan="2" colspan="2"跨列合并<br>
+    bordercolor:默认情况下边框的颜色是灰色的，可以使用bordercolor设置边框颜色。但是设置边框颜色的前提是边框的宽度不能为0，否则无法显示出边框的颜色。<br>
+    cellspacing:内框宽度,表格的内框宽度属性cellspacing用于设置表格内部每个单元格之间的间距。<br>
+    cellpadding:表格内文字与边框间距,默认情况下，单元格里的内容会紧贴着表格的边框，这样看上去非常拥挤。可以使用cellpadding来设置单元格边框与单元格里内容之间的距离。<br>
+    bgcolor:表格背景颜色,表格的背景颜色属性bgcolor是针对整个表格的，bgcolor定义的颜色可以被行、列或单元格定义的背景颜色所覆盖。<br>
+    background="背景图像地址":表格背景图像,除了可以为表格设置背景颜色之外，还可以为表格设置更加美观的背景图像。
+    bordercolorlight="亮边框的颜色" :单元格的亮边框bordercolorlight<br>
+    bordercolordark ="暗边框的颜色":单元格的暗边框bordercolordark 单元格的暗边框就是单元格边框背光的部分。通过bordercolordark可以设置单元格暗边框的颜色。<br>
+    表格的行属性:高度控制height 使用height可以设置行的高度。 语法：tr height="行的高度".<br>
+    thead>:表格的表首标记thead,表首样式的开始标记是thead，结束标记是/thead。
+        它们用于定义表格最上端表首的样式，可以设置背景颜色、文字对齐方式、文字的垂直对齐方式等。<br>
+    tbody:表格的表主体标记tbody 与表首样式的标记功能类似，表主体样式用于统一设计表主体部分的样式，标记为 tbody 。
+        在该语法中，bgcolor、align、valign的取值范围与thead 标记中的相同。一个表元素中只能有一个 tbody>标记。<br>
+    tfoot:表格的表尾标记tfoot ,tfoot>标记用于定义表尾样式。
+        该语法中，bgcolor、align、valign的取值范围与thead>标记中的相同。一个表元素中只能有一个< tfoot >标记。<br>
+    frame="box above below hsides vsides",框架显示.
+
+
+</h3>
+
+<table border="1" bordercolor="#66CCFF" cellpadding="15" background="" align="center" >
+    <caption><h1><a href="https://www.w3school.com.cn/tags/att_caption_align.asp" target="_blank">标题</a></h1></caption>
+    <thead>
+    <tr>
+        <td>1</td>
+        <td>2</td>
+        <td>3</td>
+        <td>4</td>
+    </tr>
+    </thead>
+<!--    表头-->
+    <tr>
+        <th><a href="https://www.w3school.com.cn/tags/tag_th.asp" target="_blank">表头第一列</a></th>
+        <th><a href="https://www.w3school.com.cn/tags/tag_th.asp" target="_blank">表头第二列</a></th>
+        <th><a href="https://www.w3school.com.cn/tags/tag_th.asp" target="_blank">表头第三列</a></th>
+        <th><a href="https://www.w3school.com.cn/tags/tag_th.asp" target="_blank">表头第四列</a></th>
+    </tr>
+    <tr>
+        <td bgcolor="red"></td>
+        <td background="/Users/li/Desktop/1.jpg" align="center">&emsp;</td>
+        <td align="right"><a href="https://www.w3school.com.cn/tags/tag_tr.asp" target="_blank">行</a></td>
+        <td rowspan="2"><a href="https://www.w3school.com.cn/tags/tag_td.asp" target="_blank">跨&emsp;行&emsp;合&emsp;并</a></td>
+    </tr>
+    <tr>
+        <td><a href="https://www.w3school.com.cn/tags/tag_colgroup.asp" target="_blank">定义表格列的组</a></td>
+        <td><a href="https://www.w3school.com.cn/tags/tag_col.asp" target="_blank">定义用于表格列的属性</a></td>
+        <td><a href="https://www.w3school.com.cn/tags/tag_td.asp" target="_blank">列</a></td>
+    </tr>
+    <tr>
+        <td><a href="https://www.w3school.com.cn/tags/tag_thead.asp" target="_blank">页眉</a>
+            <a href="https://www.w3school.com.cn/tags/tag_tbody.asp" target="_blank">主体</a>
+            <a href="https://www.w3school.com.cn/tags/tag_tfoot.asp" target="_blank">页脚</a></td>
+        <td colspan="2"><a href="https://www.w3school.com.cn/tags/tag_td.asp" target="_blank">跨&emsp;列&emsp;合&emsp;并</a></td>
+        <td>未婚</td>
+    </tr>
+</table>
+
+<p><b>注释：</b>frame 属性无法在 Internet Explorer 中正确地显示。</p>
+
+<p>Table with frame="box":</p>
+<table frame="box">
+  <tr>
+    <th>Month</th>
+    <th>Savings</th>
+  </tr>
+  <tr>
+    <td>January</td>
+    <td>$100</td>
+  </tr>
+</table>
+
+<p>Table with frame="above":</p>
+<table frame="above">
+  <tr>
+    <th>Month</th>
+    <th>Savings</th>
+  </tr>
+  <tr>
+    <td>January</td>
+    <td>$100</td>
+  </tr>
+</table>
+
+<p>Table with frame="below":</p>
+<table frame="below">
+  <tr>
+    <th>Month</th>
+    <th>Savings</th>
+  </tr>
+  <tr>
+    <td>January</td>
+    <td>$100</td>
+  </tr>
+</table>
+
+<p>Table with frame="hsides":</p>
+<table frame="hsides">
+  <tr>
+    <th>Month</th>
+    <th>Savings</th>
+  </tr>
+  <tr>
+    <td>January</td>
+    <td>$100</td>
+  </tr>
+</table>
+
+<p>Table with frame="vsides":</p>
+<table frame="vsides">
+  <tr>
+    <th>Month</th>
+    <th>Savings</th>
+  </tr>
+  <tr>
+    <td>January</td>
+    <td>$100</td>
+  </tr>
+</table>
+
+
+</body>
+</html>

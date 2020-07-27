@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style type="text/css">
+        *{color: green;}/*  全局选择器：等级最弱  */
+        h1, h2, h3, h4, h5, h6 a{color:blue;}  /*  选择器分组：等级第二弱  */
+        h3 a{color: #3cd721}/*  交集选择器：等级第三弱*/
+
+
+        a+span{color:wheat}  a+a{color:rebeccapurple}  a+span{color:brown;}/*  相邻兄弟选择器：等级第四弱 */
+
+
+        h5>strong {color: blue;}  h5>strong>strong{color: coral;}/*  子代选择器：等级第五弱*/
+
+
+        .button{color:red;}/*   类选择器：等级第六弱    */
+        *[title] {color:cadetblue;}  a[href] {color:olive;}/*   属性选择器：等级第七弱*/
+
+        /*  伪类*/
+        a:link {color: #FF0000;text-decoration:none;}		/* 未访问的链接  去除下划线：text-decoration:none*/
+        a:visited {color: #00FF00}	/* 已访问的链接 */
+        a:hover {color: #FF00FF}	/* 鼠标移动到链接上 非链接功能一样*/
+        a:active {color: #0000FF}	/* 选定的链接 非链接功能一样*/
+
+        #id_0{color:royalblue;}/*   id选择器：等级最高  */
+    </style>
+
+</head>
+<body>
+<h1 class="button">第一代：老大
+    <span class="button" id="id_0">第二代：老大
+        <span>第三代：老大</span>
+    </span>
+    <span>第二代：老二</span>
+</h1>
+<h2>第一代：老二
+    <a title="W3School" class="button">第二代：老大</a>
+    <a href="盒子用法汇总.html">第二代：老二</a>
+</h2>
+<h3>第一代：老三
+    <a title="W3School" class="button">第二代：老大</a>
+    <a href="盒子用法汇总.html">第二代：老二</a>
+    <a class="button">第二代：老三</a>
+    <a>第三代：老四</a>
+</h3>
+<h4>第一代：老四
+    <a>第二代：老大 title="W3School" </a>
+    <span>第二代：老二</span>
+    <a>第二代：老三 href="ALL.html"</a>
+    <a>第二代：老四</a>
+    <a>第二代：老五</a>
+    <span>第二代：老六</span>
+</h4>
+<h5>第一代：老五
+    <strong>第二代：老大
+        <strong >第三代：老大</strong>
+        <strong>第三代：老二</strong>
+    </strong>
+    <span>
+        <strong>第二代：老二
+            <strong>第五代：老大</strong>
+        </strong>
+    </span>
+</h5>
+<h6>第一代：老六</h6>
+</body>
+</html>

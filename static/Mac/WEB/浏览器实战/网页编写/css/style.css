@@ -1,0 +1,386 @@
+/*头部*/
+.header{
+	width: 100%;
+	height: 69px;
+	background: black;
+}
+/*头部内容*/
+.header-contain{
+	width: 1200px;
+	height: 69px;
+	background: black;
+	margin: auto;
+}
+/*logo*/
+.header .header-contain .logo{
+	width: 235px;
+	height: 64px;
+	background-image: url("https://www.python.org/static/img/python-logo.png ");
+	position: relative;
+	top:-2px;
+	float: left;
+}
+/*导航栏*/
+.header .header-contain .nav{
+	height: 69px;
+	/*background-color: #7feb5f;*/
+	float: left;
+	margin-left: 100px;
+}
+.header .header-contain .nav ul li{
+	float: left;
+	padding: 0 40px;
+	height: 69px;
+	line-height: 69px;
+}
+.header .header-contain .nav ul li:hover{
+	border-bottom: 5px solid #5095ff;
+	/*防止下边框溢出盒子模型*/
+	box-sizing: border-box;
+}
+.header .header-contain a{
+	text-decoration: none;
+	color: white;
+}
+/*注册登录*/
+.header .header-contain .login{
+	height: 69px;
+	/*background-color: #7feb5f;*/
+	float: right;
+	line-height: 69px;
+}
+/*阿里图标*/
+.icon-user:before{
+	font-size: 30px;
+	color: white;
+}
+/*网页尾部*/
+.footer-top{
+	width: 100%;
+	height: 110px;
+	background: gray;
+}
+.footer-top .top-content{
+	width: 1200px;
+	/*height: 110px;*/
+	/*background: #7feb5f;*/
+	margin: auto;
+	background: gray url("https://www.python.org/static/img/python-logo.png") no-repeat 8px;
+	text-align: center;
+	line-height: 35px;
+	padding: 20px 0;
+}
+.footer-top .top-content a{
+	text-decoration: none;
+	color: ghostwhite;
+}
+.footer-top .top-content span{
+	color: ghostwhite;
+}
+/*尾部下面*/
+.footer-bottom{
+	width: 100%;
+	background: black;
+}
+.footer-bottom .bottom-content{
+	width: 1200px;
+	height: 50px;
+	background-color: black;
+	margin: auto;
+	line-height: 50px;
+	text-align: center;
+	color: white;
+}
+
+/*中间部分*/
+body{/* boby背景颜色*/
+	background-color:#9FB6CD;
+}
+.body{/**/
+	width:100%;/*自动适应浏览器*/
+	height:1260px;
+}
+.body-content{/* */
+	width:1200px;
+	height:1200px;
+	background-color:#8A8A8A;
+	margin:50px auto;/* 设置外面距离，上下50px左右居中*/
+}
+.body .body-content .body-left{/*一层一层筛选目标*/
+	width:800px;
+	height:1000px;
+	/*border:1px solid red;!*边框，测试用的*!*/
+	float: left;/*让右边的盒子浮动并列排序*/
+}
+.body .body-content .body-left .left1{/*轮播图*/
+	width:800px;
+	height:200px;
+	border:1px solid red;/*边框，测试用的*/
+	background-image:url("https://res.shiguangkey.com/file/2020/7/6/15939990086282701007705.jpg?x-oss-process=image/format,jpg");/*图片网页地址*/
+	background-size:100% 100% ;
+	position:relative;/*相对定位父相子绝*/
+}
+.left1 .ul1 li{/*取巧筛选目标*/
+	color:red;
+	font-size:50px;
+	line-height:200px;
+	position:absolute;/*绝对定位父相子绝*/
+}
+.left1 .ul1 .li1{/*左<按钮*/
+	left:0;/*左偏移0*/
+}
+.left1 .ul1 .li2{/*右>按钮*/
+	 right:0;/*右偏移0*/
+}
+.left1 .ul1 li:hover{/*伪类选择器，条件满足，鼠标指针变成手*/
+	/*设置鼠标指针为手指状态*/
+	cursor:pointer;
+	color:white;/*设置颜色*/
+	font-size:70px;/*字体变大*/
+}
+.left1 .ul2{/*底部圆圈*/
+	position:absolute;/*绝对定位父相子绝*/
+	bottom:10px;/*底部偏移*/
+	left:50%;/*左偏移*/
+	/*将元素沿着x轴移动自身宽度的百分之五十*/
+	transform:translateX(-50%);
+}
+.left1 .ul2 li{/**/
+	float:left;/*浮动*/
+	margin-right:10px;/*元素间隔*/
+	width:15px;/*宽度*/
+	height:15px;/*高度*/
+	border:1px solid red;/* 正方形边框*/
+	border-radius:50%; /*正方形变为圆圈，设置半径*/
+}
+.left1 .ul2 li:hover{
+	/*鼠标为手指状态*/
+	cursor:pointer;
+}
+.color{/*修改圆圈背景颜色*/
+	background-color:#F0FFFF;
+}
+/*左边第二个区域*/
+.body .body-content .body-left .left2{
+	width:800px;/*大盒子宽高*/
+	height:240px;
+	background-color: #FFDAB9;/*背景色*/
+}
+.left2 ul li{/*无序排列*/
+	width:251px;
+	height:200px;
+	float:left;/*设置浮动，让快级标签变为横向排列*/
+	margin-left:10px;/*图片之间间隔*/
+	margin-top:10px;/*图片与顶部之间间隔*/
+	text-align:center;/*文字居中*/
+}
+.left2 ul li a img{/*设置图片大小，否则不会横向排列*/
+	width:251px;
+	height:200px;
+	/*设置图片放大过渡时间*/
+	transition:3s;
+}
+.left2 ul li a{
+	color:black;/*字体颜色*/
+	display:block;
+	/*给子元素img设置超出部分隐藏，前提必须要先给a标签设置转换为块级元素*/
+	overflow:hidden;
+}
+.left2 ul li p{/*解决问题：字体太靠近图片*/
+	margin-top:2px;/*字体设置外边距*/
+	font-size:20px;/*字体大小*/
+}
+.left2 ul li a img:hover{
+	/*鼠标悬停在图片上时，需要放大图片 参数为放大倍数,掩藏显示多余的部分，父级设置*/
+	transform:scale(1.2);/*utoop查找或者w3cshool*/
+}
+/*左边第三区域*/
+.body .body-content .body-left .left3{/*导航栏*/
+	width:800px;
+	height:60px;
+	background-color: #00cccc;
+}
+.left3 ul li{
+	float:left;/*设置浮动，横向排列*/
+	height:60px;/*设置行高，为了居中*/
+	line-height:60px;/*上下居中*/
+	padding:0 20px;/*设置外边距，相互隔开*/
+	font-size:25px;/*导航栏字体大小*/
+	color:#33ff66;
+}
+.active{/*显示下边框*/
+	border-bottom:5px solid red;
+	/*防止下边框溢出当前盒子模型*/
+	box-sizing:border-box;
+}
+.left3 ul li:hover{
+	cursor:pointer;/*鼠标悬停在元素上，下边框显示*/
+}
+/*左边第四部分*/
+.body .body-content .body-left .left4{/*上部分*/
+	width:800px;
+	height:420px;/*解决盒子设置外边距之后，图片溢出问题*/
+	background-color: #FFF5EE;
+}
+.left4 .left4-top{
+	width:800px;
+	height:200px;
+	position:relative;/*父相*/
+
+}
+.left4 .left4-top .top-left{/*图片*/
+	width:240px;
+	height:200px;
+	display:inline-block;/*设置为行内块*/
+}
+.left4 .left4-top .top-right{
+	display:inline-block;/*设置为行内块*/
+	position:absolute;/*子绝*/
+	bottom:40px;/*精准定位*/
+	left:270px;/*精准定位*/
+}
+.left4 .left4-top .top-right p{/*设置距离*/
+	line-height:35px;/*行高*/
+	font-size:20px;/*字体大小*/
+}
+.top-right p span{/*字体颜色*/
+	color:red;
+}
+.left4 .left4-top .top-left img{/*图片大小*/
+	width:240px;
+	height:200px;
+	border-radius:10%;/*图片设置圆角*/
+}
+.left4 .left4-bottom{/*下部分*/
+	width:800px;
+	height:200px;
+	margin-top:20px;/*上下两部分的间距外边距*/
+	position:relative;/*父相*/
+}
+.left4 .left4-bottom .top-left{
+	width:240px;
+	height:200px;
+	display:inline-block;
+}
+.left4  .left4-bottom .top-left img{
+	width:240px;
+	height:200px;
+	border-radius:10%;
+}
+.left4 .left4-bottom .top-right{
+	display:inline-block;
+	position:absolute;/*子绝*/
+	bottom:40px;
+	left:270px;
+}
+.left4 .left4-bottom .top-right p{
+	line-height:35px;
+	font-size:20px;
+}
+.left4 .show{
+	display:block;
+}
+.left4 .hide{
+	display:none;
+}
+/*浏览器第五部分*/
+.body .body-content .body-left  .left5{
+	width: 800px;
+	height: 77px;
+	background-color: #4169E1;
+	position: relative;/*相对定位*/
+}
+.left5 .left5-box{
+	width: 400px;
+	height: 50px;
+	background-color: #FFDAB9;
+	text-align: center;/*文本居中*/
+	line-height: 50px;/*行高垂直居中*/
+	font-size: 25px;/*字体大小*/
+	position: absolute; /*绝对定位*/
+	bottom: 0;/*内盒子和外盒子距离*/
+	left: 25%;/*定位内盒子和外盒子*/
+}
+
+
+/*右边部分*/
+.body .body-content .body-right{
+	width: 360px;
+	height: 1200px;
+	background-color: #33FF66;
+	float: right;/*右浮动*/
+}
+/*右一、二部分*/
+.body-right .right{
+	margin:0 20px;/*照片，上下为0左右20*/
+}
+.right img{/*图片大小*/
+	width: 320px;
+	height: 200px;
+}
+.right p{
+	line-height: 30px;
+	font-size: 20px;
+}
+.right p span{
+	float: right;/*靠右显示*/
+	color:red;
+}
+/*右三部分*/
+.right3 p{
+	text-align: center;/*文本居中*/
+}
+
+/*阿里图标 伪类选择器*/
+/* #s1:before{
+	color: #00CCCC;
+} */
+.icon-weibo::before {
+	font-size: 30px;
+	color: aliceblue;
+}
+icon-gongzhonghao::before{
+	font-size: 30px;
+	color: aliceblue;
+}
+icon-qq::before{
+	font-size: 30px;
+	color: #00CCCC;
+}
+/*右下部分*/
+.body-right .f1{
+	margin-left: 20px;
+	line-height: 35px;
+	font-size: 20px;
+}
+.body-right .right-bottom{
+	margin: 0 20px;/*外边距*/
+}
+.right-bottom #box{
+	width: 200px;
+	height: 50px;
+	line-height: 25px;/*行高*/
+	overflow: hidden;/*文字超出部分，隐藏*/
+	/*使用省略号设置被修剪的文本*/
+	text-overflow: ellipsis;
+	/* 必须结合的一个属性,将id=box的div 设置弹性伸缩模型显示 */
+	display: -webkit-box;
+	/* 显示的行数,用来限制一个块级元素显示的文本行数 */
+	-webkit-line-clamp: 2;
+	/* 组合的属性,设置文字的排列方式:垂直排列 */
+	-webkit-box-orient: vertical;
+	float: left;
+}
+.right-bottom  img{
+	width: 111px;
+	height: 70px;
+	float: right;
+}
+.right-bottom  p{
+	width: 200px;
+	font-size: 20px;
+}
+.right-bottom  p .s2{
+	float: right;
+	color: red;
+}

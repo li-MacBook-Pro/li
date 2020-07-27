@@ -1,0 +1,105 @@
+<!DOCTYPE>
+<html lang="en">
+<head>
+    <title>基本选择器练习</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" type="text/javascript"></script>
+    <style type="text/css">
+        body{
+            font-family: "微软雅黑"
+        }
+        div,span {
+            width: 140px;
+            height: 140px;
+            margin: 20px;
+            background: #9999CC;
+            border: #000 1px solid;
+            float: left;
+            font-size: 17px;
+            font-family: Roman;
+        }
+
+        div.mini {
+            width: 40px;
+            height: 43px;
+            background: #CC66FF;
+            border: #000 1px solid;
+            font-size: 12px;
+            font-family: Roman;
+        }
+        input{ margin: 5px 5px; }
+    </style>
+</head>
+<body>
+<input type="button" value=" 改变元素名为 <div> 的所有元素的背景色为 #FF69B4" id="b1" />
+<input type="button" value=" 改变 id 为 one 的元素的背景色为 #9ACD32" id="b2" />
+<input type="button" value=" 改变 class 为 mini 的所有元素的背景色为 #FF0033" id="b3" />
+<input type="button" value=" 改变所有元素的背景色为 #FDF5E6" id="b4" />
+<input type="button" value=" 改变所有的<span>元素和 id 为 two 的元素的背景色为 #FF1493" id="b5" />
+<input type="button"
+        value=" 改变所有的<span>元素和 id 为 two 的,id为one的，class为 mini的所有的元素的背景色为 #006400"
+        id="b6" />
+
+<h1>天气冷了</h1>
+<h2>天气又冷了</h2>
+
+<div id="one">id为one</div>
+<div id="two" class="mini">
+        id为two class是 mini
+    <div class="mini"> class是 mini</div>
+</div>
+
+<div class="one">
+        class是 one
+    <div class="mini"> class是 mini</div>
+    <div class="mini"> class是 mini</div>
+</div>
+<div class="one">
+        class是 one
+    <div class="mini01"> class是 mini01</div>
+    <div class="mini"> class是 mini</div>
+</div>
+
+<br>
+<div id="mover">动画</div>
+<br>
+<span class="spanone"> span </span>
+<span class="mini"> span class是mini </span>
+<script>
+    $(".wrap>ul>li").mouseover(function(){
+        $(this).children("ul").show();//父子关系，只能触发ul标签
+        // $(this).siblings("ul").show();//兄弟关系$(".wrap>ul>li>a")
+    });
+    $(".wrap>ul>li").mouseout(function(){
+        $(this).children("ul").hide();//父子关系，只能触发ul标签
+        // $(this).siblings("ul").hide();//兄弟关系$(".wrap>ul>li>a")
+    });
+$(function(){
+        $("#b1").click(function(){
+            $("div").css("background","#FF69B4");
+        });
+        $("#b2").on("click",function () {
+            $("#one").css("background","#9ACD32");
+        });
+        $("#b3").click(function () {
+            $("[class=mini]").css("background","#FF0033");
+        });
+        $("#b4").on("click",function () {
+            $("*").css("background","#FDF5E6");
+        });
+        $("#b5").on("click",function () {
+            $("span,#two").css("background","#FF1493");
+        });
+        $("#b6").on("click",function () {
+            $("span,#two,#one的,.mini").css("background","#006400");
+        });
+
+    });
+</script>
+
+<script type="text/javascript">
+
+</script>
+
+</body>
+</html>

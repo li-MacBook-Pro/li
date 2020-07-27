@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<!-- Array对象 -->
+<script>
+    // 1. var arr = new Array(元素列表);
+    // 2. var arr = new Array(默认长度);
+    // 3. var arr = [元素列表];
+    // 存储多个元素，
+
+    var arr = new Array(1,2,1,2);
+
+    var arr2 = new Array(5);
+
+    var arr3 = [1,2,3,4,5];
+    // 创建一个空数组 既不知道长度也不知道元素
+    var arr4 = new Array();
+
+    var arr5 = [];
+    // 特点：
+    // 1. js中数组的类型是可变的
+    var arr6 = [1,"2",true];//元素随便放
+    // 定义好数组之后想要访问某一个元素，通过下标（索引）来访问，从0开始
+
+    // console.log(arr6[3]);//undefined
+
+    // 2.js中的数组长度可变  length
+    arr6[10] = 11;
+    console.log(arr6.length);
+
+    var cars = ["Saab", "Volvo", "BMW"];
+    document.getElementById("demo").innerHTML = cars[0];
+</script>
+</body>
+</html>

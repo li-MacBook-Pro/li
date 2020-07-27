@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+        <link rel="stylesheet" href="浮动.css">
+    <title>浮动</title>
+</head>
+<body>
+<!--float ：right left-->
+<!--    /*    display:inline0block;设置为行内块元素*/-->
+<div style="height: 200px;width:1000px;">
+    <p>三个盒子：可以缩放浏览器看第三个盒子的摆放,盒子之间没有缝隙</p>
+    <div class="one"></div>
+    <div class="two"></div>
+    <div class="there"></div>
+</div>
+<p>文档流</p>
+<div style="width:50px;height:50px;"></div>
+<div></div>
+<p>文档流加<a href="https://www.w3school.com.cn/css/css_positioning_floating.asp" target="_blank">浮动</a>
+    <a href="https://www.w3school.com.cn/cssref/pr_class_float.asp" target="_blank">float:不占用位置</a>display: flex;</p>
+<div class="wer">
+    <div class="four"></div>
+    <div class="five"></div>
+</div>
+<p>不设置width案例 1：宽度跟随浏览器。2：设置浮动不显示div块级元素属性变为行内元素属性 类似于:inline-block;行内块元素。3：div里面设置文字width和文字宽度一样</p>
+<div style="height: 100px;"></div><div style="height:100px;float: left"></div><div style="height:100px;">文字</div>
+<p></p>
+<div class="six"></div>
+<p>清除浮动：父盒子随着子盒子内容变大而变大# 需要注释div属性<br>为了解决父盒子引文子盒子浮动而引起内部高度为0：
+    <a href="https://www.w3school.com.cn/cssref/pr_class_clear.asp" target="_blank">clera:</a>
+    left	在左侧不允许浮动元素。 right	在右侧不允许浮动元素。 both	在左右两侧均不允许浮动元素。
+    none	默认值。允许浮动元素出现在两侧。 inherit	规定应该从父元素继承 clear 属性的值。<br>
+1、额外标签法：在浮动元素末尾加上空的标签，设置清除浮动（不建议使用）。2、给父盒子添加属性：overflow:hidden。<br>
+使用：1、父元素没有高度。2、子元素浮动。3、影响到布局。</p>
+<div class="ten">
+    <div class="eleven"></div>
+    <div class="twelve"></div>
+</div>
+<div class="ten">
+    <div class="eleven fd"></div>
+    <div class="twelve fd"></div>
+</div>
+1、额外标签法：在浮动元素末尾加上空的标签，设置清除浮动（不建议使用）。</p>
+<div class="ten">
+    <div class="eleven fd"></div>
+    <div class="twelve fd"></div>
+    <div style="clear:both"></div>
+</div>
+2、给父盒子添加属性：overflow:hidden。
+<div class="ten" style="overflow:hidden">
+    <div class="eleven fd"></div>
+    <div class="twelve fd"></div>
+</div>
+
+</body>
+</html>

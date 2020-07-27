@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    // 创建的每一个函数，浏览器都会向函数添加一个属性 ：prototype
+    function Person(){}
+    // 如果函数作为普通函数调用，原型没有作用
+    //当函数作为构造函数调用时，他所创建的对象中都会有一个隐含的属性指向该构造函数中的原型对象，可以通过__proto__
+
+    var per = new Person();
+    console.log(per.__proto__);
+    var per2 = new Person();
+    console.log(per2.__proto__==per.__proto__);
+
+    // 原型对象就相当于一个公共区域，所有同一个类的对象都可以访问到这个原型对象，
+    // 我们可以将对象中的共有内容,统一设置到原型对象中
+    console.log(Person.prototype);//object 原型对象
+
+    // 向person的构造函数中的原型对象添加属性a
+    // 赋值操作：对象名.属性名 = 属性值;
+    Person.prototype.a = 100;
+
+    // 当我们去访问对象的一个属性或者方法时，会先从对象中寻找，
+    // 如果有，直接使用，如果没有，则会去原型对象中找，如果找到，就可以用
+    per2.a = "如果有，直接使用";
+    console.log(per2.a);
+
+    //向person的构造函数中的原型对象添加函数
+    Person.prototype.sayHello = function(){alert("hello")};
+    per2.sayHello();
+    console.log(per2.sayHello())
+
+</script>
+</body>
+</html>

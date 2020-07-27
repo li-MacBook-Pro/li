@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title></title>
+</head>
+<body>
+<button id="btn1">按钮</button>
+<!--<input type="checkbox" id="ch1" checked>-->
+<input type="checkbox" id="ch1">
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.js"></script>
+<script>
+	// var btn = document.getElementById("btn1")
+	// btn.onclick = function(){
+	// 	// js的设置
+	// 	document.getElementById("ch1").checked = "checked";
+	// 	// 获取
+	// 	console.log(document.getElementById("ch1").checked);
+
+	// }
+	$("#btn1").click(function(){
+		// console.log($("#ch1").attr("checked"));
+		// 属性：checked，selected ，disabled  这些值为true/flaue不能用attr获取，只能用prop函数
+		// 如果在input里面添加checked/selected/disabled，则为true
+		console.log($("#ch1").prop("checked"));
+	});
+</script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<style>
+		div{
+			width: 200px;
+			height: 200px;
+			background-color: aqua;
+			display: none;
+		}
+	</style>
+</head>
+<body>
+<button id="btn1">淡入</button>
+<button id="btn2">淡出</button>
+<div id="box"></div>
+<script src="js/jquery-1.11.3.min.js"></script>
+<script>
+	$("#btn1").click(function(){
+		$("#box").fadeIn(3000,function(){
+			// 回调函数
+		});
+	});
+	$("#btn2").click(function(){
+		$("#box").fadeOut(3000,function(){
+			// 回调函数
+		});
+	});
+</script>
+</body>
+</html>

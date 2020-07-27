@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" type="text/javascript"></script>
+    <style>
+        div{
+            height: 100px;width: 100px;
+        }
+    </style>
+</head>
+<body>
+<div></div>
+<div id="box"></div>
+<div></div>
+<div></div>
+<div></div>
+<ul>
+    <li>1</li>
+    <li>233</li>
+    <li class="liclass">2</li>
+    <li>3</li>
+    <li>4</li>
+</ul>
+<script>
+    //id为box添加背景颜色
+    $("#box").css("background","red");
+    //匹配第一个
+    $("div:first").css("background","red");
+    //匹配最后一个
+    $("div:last").css("background","red");
+    //匹配没有给id的所有div
+    $("div:not(#box)").css("background","red");
+    //提供一组无序列表
+    //匹配ul列表中下标第二个和第三个li，！！！！小细节先找大的，后找小的，因为筛选完下标会更新。
+    // $("li:lt(3):gt(0)").css("background","red");//匹配下标，先找大的。
+    // $("li:contains(233)").css("background","olivedrab");//匹配文本信息
+    //寻找class,两种写法
+    // $("li.liclass").css("background","olivedrab");$("li[class=liclass]").css("background","olivedrab");
+
+
+</script>
+
+</body>
+</html>

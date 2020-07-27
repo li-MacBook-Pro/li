@@ -1,0 +1,196 @@
+div{
+    width:100px;
+    height:100px;
+    border: 1px solid blue; /*  边框  */
+}
+
+/*相对定位*/
+.one{
+    background-color:red; /*  背景颜色  */
+    position:relative;/*    定位模式*/
+    top:50px;/*    相对偏移：边偏移*/
+    left:50px;
+    /*right:0;*/
+    /*bottom:0;*/
+}
+.two{
+    background-color: #739c27; /*  背景颜色  */
+    position:relative;/*    定位模式*/
+    top:-25px;/*    相对偏移：边偏移*/
+    left:75px;
+    /*right:0;*/
+    /*bottom:0;*/
+}
+.there{
+    background-color: #1f44cb; /*  背景颜色  */
+    position:relative;/*    定位模式*/
+    top:-100px;/*    相对偏移：边偏移*/
+    left:100px;
+    /*right:0;*/
+    /*bottom:0;*/
+}
+/*绝对定位*/
+.four{
+    /*父元素*/
+    width:400px;
+    height:400px;
+    background-color: #54b82b;
+    margin:100px;
+}
+.five{
+    /*子元素*/
+    width:100px;
+    height:100px;
+    background-color: #1acbcb;
+    /*    绝对定位*/
+    position:absolute;
+    top:800px;
+    left:100px;
+}
+.six{
+    /*父元素*/
+    width:400px;
+    height:400px;
+    background-color: #2764bf;
+    margin:100px;
+    position:relative;;
+}
+.seven{
+    /*子元素*/
+    width:100px;
+    height:100px;
+    background-color: #6028ba;
+     /*    绝对定位*/
+    position:absolute;
+    top:100px;
+    left:100px;
+}
+.eight{
+    /*子元素*/
+    width:100px;
+    height:100px;
+    background-color: #e042b4;
+    /* !*    绝对定位*!*/
+    /*position:absolute;*/
+    /*top:100px;*/
+    /*left:100px;*/
+
+}
+/*绝对定位2*/
+.nine{
+     /*父元素*/
+    width:400px;
+    height:400px;
+    background-color: #2764bf;
+    margin:100px;
+    position:relative; /*    相对定位*/
+}
+.ten{
+    /*子元素*/
+    width:40px;
+    height:40px;
+    background-color: #3cd721;
+     /*    绝对定位*/
+    position:absolute;
+    top:180px;
+}
+.eleven{
+    /*子元素*/
+    width:40px;
+    height:40px;
+    background-color: #ba3428;
+     /*    绝对定位*/
+    position:absolute;
+    top:45%;
+    right:0;
+}
+.twelve{
+    /*子元素*/
+    width:100px;
+    height:100px;
+    background-color: #6028ba;
+     /*    绝对定位*/
+    position:absolute;
+    top:100px;
+    left:100px;
+}
+.thirteen{
+    /*子元素*/
+    /*width:100px;*/
+    /*height:100px;*/
+    background-color: #004ce3;
+     /*    绝对定位*/
+    /*position:absolute;*/
+    /*top:100px;*/
+    /*left:100px;*/
+}
+/*固定定位*/
+.fourteen{
+     /*父元素*/
+    width:400px;
+    height:400px;
+    background-color: #2764bf;
+    margin:100px;
+    position:relative; /*    相对定位*/
+}
+.fifteen{
+    /*子元素*/
+    width:40px;
+    height:40px;
+    background-color: #3cd721;
+    /*固定定位*/
+    position:fixed;
+    top:180px;
+    left: 180px;
+}
+/*层叠顺序*/
+.sixteen{
+    /*父元素*/
+    width:400px;
+    height:400px;
+    background-color: #2764bf;
+    margin:100px;
+    position:relative; /*    相对定位*/
+
+}
+.seventeen{
+    /*子元素*/
+    width:100px;
+    height:100px;
+    background-color: #3cd721;
+    position:absolute;/*    绝对定位*/
+    top:0;
+    left:0;
+    z-index: 1;
+
+}
+.eighteen{
+    /*子元素*/
+    width:100px;
+    height:100px;
+    background-color: #ba3428;
+    position:absolute;/*    绝对定位*/
+    top:25px;
+    left:25px;
+    z-index: 2;
+}
+.nineteen{
+    /*子元素*/
+    width:100px;
+    height:100px;
+    background-color: #6028ba;
+    position:absolute;/*    绝对定位*/
+    top:50px;
+    left:50px;
+    z-index: 0;
+}
+.twenty{
+    /*子元素*/
+    width:100px;
+    height:100px;
+    background-color: #a01bb6;
+    position:absolute;/*    绝对定位*/
+    top:75px;
+    left:75px;
+    z-index: -1;
+}

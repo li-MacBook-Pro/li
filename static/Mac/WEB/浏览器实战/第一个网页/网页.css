@@ -1,0 +1,134 @@
+*{
+    margin:0;padding: 0;
+}
+.header{
+    width: 100%;
+    height: 69px;
+    background-color: black;
+}
+.h_box{
+    width: 1200px;
+    height: 100%;
+    background-color: black;
+    margin: auto; /*  居中  */
+}
+.logo{
+    width: 235px;
+    height: 69px;
+    float: left;
+}
+.logo_title{
+    display: block; /*转为快标签*/
+    width: 100%;
+    height: 100%;
+    background:url("https://www.python.org/static/img/python-logo.png");
+}
+.menu{
+    float: left;
+    list-style: none; /*去除li标签小点点*/
+    line-height: 69px;
+    margin-left:100px ;/*外边框边距*/
+
+}
+.menu li{
+    float: left;
+    margin-left: 60px;
+    font-size: 20px;
+}
+a{
+    color: white;/*字体颜色*/
+    text-decoration:none;		/* 未访问的链接  去除下划线：text-decoration:none*/
+}
+/*阿里里图标*/
+.a_box{
+    height: 100%;
+    float: right;
+}
+.a_box span{
+    line-height: 69px;      /*      */
+    margin: auto; /*  居中  */
+}
+.icon-zhanghu:before{
+    color: white;
+    /*font-size: 20px;*/
+}
+.a_box span a{
+    color: white;
+    text-decoration: none;
+
+}
+
+.left2 ul li{
+    float:left;
+    margin-left:10px ;/* 左外边距，内边距会撑开盒子*/
+    margin-top:10px;
+    text-align: center/*    文字居中*/
+}
+.left2 ul li a img{
+    width: 251px;
+    height:200px ;
+/*    设置过度时间*/
+    transition: 3s;
+}
+.left2 ul li a{
+    color: black;
+    display: block;
+/*   隐藏超出边距的东西，给子元素 */
+    overflow: hidden;
+}
+.left2 ul li p{
+    margin-top: 5px;
+    font-size: 5px;
+}
+.left2 ul li a img:hover{
+/*    鼠标悬停上面，需要放大图片 utools*/
+    transform:scale(1.2) ;
+/*    隐藏超出边距的东西，overflow: hidden;给父设置*/
+
+/*   过渡时间 */
+
+}
+/*边框下边颜色在边框内部*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+.footer{
+    width: 100%;
+    height: 160px;
+    background-color: gray;
+}
+.f_logo{
+    display: block; /*转为快标签*/
+    /*width: 100%;*/
+    /*height: 100%;*/
+    color: white;
+    width: 1200px;
+    background:url("https://www.python.org/static/img/python-logo.png")no-repeat;/*no-repeat不平铺*/
+    padding: 30px 0;/* 高度             */
+    margin: auto;/* 居中*/
+}
+.f_logo p{
+    width: 1200px;
+    text-align: center;/*文字剧中*/
+}
+.f_bottom{
+    text-align: center;/*文字剧中*/
+    background-color: black;
+    line-height: 70px;
+
+}
+.f_bottom p{
+    color: white;
+    width: 100%;
+
+}

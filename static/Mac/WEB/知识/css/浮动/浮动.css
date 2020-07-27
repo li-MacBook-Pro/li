@@ -1,0 +1,73 @@
+a:link {color: #FF0000;text-decoration:none;}
+a:visited {color: #00FF00}	/* 已访问的链接 */
+a:hover {color: #FF00FF}	/* 鼠标移动到链接上 非链接功能一样*/
+a:active {color: #0000FF}	/* 选定的链接 非链接功能一样*/
+
+/*div{height: 100px;width:100px;*/
+/*    background-color: #d99bd6;*/
+/*    border: 1px solid rgb(0, 0, 0);}*/
+
+.one{height:150px;
+            width: 100px;
+            border: 1px solid blue;
+            background-color: #00FF00;
+            float: left;
+        }
+.two{height: 100px;
+            width: 100px;
+            border: 1px solid blue;
+            background-color: #00FF00;
+            float: left;}
+.there{height: 100px;
+            width: 500px;
+            border: 1px solid blue;
+            background-color: #6a34d0;
+            float: left;
+        }
+
+.wer{height: 100px;
+    width: 400px;
+    display: flex;
+    /*float: left;*/
+}
+.four{height: 100px;
+    width: 100px;
+    border: 1px solid blue;
+    background-color: #00FF00;
+    float: left;}
+.five{height: 100px;
+    width: 100px;
+    border: 1px solid blue;
+    background-color: #00FF00;
+    float: left;}
+
+.six{height: 100px;
+    width: 100px;
+    border: 1px solid blue;
+    background-color: #00FF00;
+    /*float: left;*/
+}
+.seven{
+    height:100px;
+}
+.eight{
+    height:100px;
+    float:left;
+}
+.nine{
+    height:100px;
+}
+.ten{
+    background-color: rgb(0,0,0)
+}
+.eleven{
+    width:100px;
+    height:100px;
+    background-color:#c2e071;
+}
+.twelve{
+    width:100px;
+    height:200px;
+    background-color:red;
+}
+.fd{float:left;}

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>css</title>
+    <link rel="stylesheet" href="实例/reset.css">
+    <style type="text/css">
+        *{color: green;margin:0;padding:0;}
+        body{background-image: url(../../../Mac/play/调用/game/images/1.jpg);background-repeat: no-repeat;background-attachment: fixed}
+
+        a{font-family: 微软雅黑;}
+
+        .font100{font-size: 100px;}  .font20{font-size: 20px;}
+        .blue{color:blue;}  .red{color:red;}  .orange{color:orange;}  .green{color: #008000;}  .normal {font-family:宋体;}
+
+        .hd span a {color: olive}
+        h1,span,.orange{color: rgb(0, 183, 255);}
+        h1>a{color:olive}
+        p.orange{color: olive}span.orange{color: olive}
+
+        a:link {color: #FF0000;text-decoration:none;}		/* 未访问的链接  去除下划线：text-decoration:none*/
+        a:visited {color: #00FF00}	/* 已访问的链接 */
+        a:hover {color: #FF00FF}	/* 鼠标移动到链接上 非链接功能一样*/
+        a:active {color: #0000FF}	/* 选定的链接 非链接功能一样*/
+
+        #id_0{color: darkkhaki;}
+        #div_0{width:300px;height:200px;background-color: rgb(127, 164, 203);background-image: url("../../../Mac/play/调用/game/images/1.jpg");background-repeat: no-repeat; background-size:300px 200px;}
+
+        /*边框：粗细、样式：solid实线,dashed虚线,dotted点线、颜色*/ /*复合写法 border: 粗细 样式 颜色 */ /*border:border-tpo-right-bottom-left*/
+        #div_1{width:200px;height:200px;border-width:1px;border-style: dotted;border-color: olive;
+        /*padding-bottom: padding-left: padding-right: padding-top:
+        指定一个值时 该值指定四个边的内边距
+        指定两个值时 第一个值指定上下两边的内边距 第二个指定左右两边的内边距
+        指定三个值时 第一个指定上边的内边距.第二个指定左右两边 第三个指定下边
+        指定四个值时分别为上 右 下 左（顺时针顺序）
+        padding: 2px 1em 0 1em;顶部| 右边| 底部| 左边*/
+            padding: 2px 1px 0 1px;
+        /*盒子没有给高度宽度，则padding不会撑开盒子自动计算*/
+            /* margin: 1em auto;上和下边 1字距 边距, 该盒子是水平居中的 */
+            /* margin: auto;该盒子是水平居中的, 上下边距为0 margin-left: auto;margin-top: auto;。。。*/
+            /* margin: 10px 3px 30px 5px;上 右 下 左（顺时针顺序）*/
+            margin: 1em auto;
+
+        }
+        input{border-top:none;border-right:none;border:none;border-bottom:1px;border-color: olive}
+        #div_1 a{
+            /*    行内元素转为行内块元素   */
+            /*display: inline-block;*/
+            height:25px;
+            /*width: 120px;*/
+            background-color:olivedrab;
+            /*    垂直居中:设置行高*/
+            line-height: 25px;
+            /*color:rgb(0,0,0)*/
+            /*盒子没有给高度宽度，则padding不会撑开盒子*/
+
+        }
+    /*    子父盒子塌陷:子盒子在父盒子内移动，且父盒子不移动*/
+    /*    1.给父定义上边距2.给父设置内边距3.给父定义一个属性 overflow:hidden;*/
+
+    /*    display:inline0block;设置为行内块元素*/
+        
+    /*    浮动*/
+
+    </style>
+</head>
+<body>
+<ul><li><h1><a href="https://www.w3school.com.cn/css/css_howto.asp" target="_blank">层叠样式表</a></h1></li></ul>
+<blockquote>
+    <b>1：行内式（内联标签）</b>例如：<span style="color:rgb(121,173,23); font-size: 15px;">行内式</span><br>
+    <b>2：内部样式表（内嵌样式）</b>例如1：<a href="https://www.w3school.com.cn/css/css_syntax_pro.asp" target="_blank">选择器分类</a><span align="center" class="p font20">
+    <span class="blue font20">G</span><span class="red font20">o</span><span class="orange font20">o</span><span class="blue font20">g</span><span class="green font20">l</span><span class="red font20">e</span></span>
+    例如2：<span class="font20"><a href="https://www.w3school.com.cn/css/css_syntax_descendant_selector.asp" target="_blank">派生选择器</a></span>
+    例如3：<a href="https://www.w3school.com.cn/css/css_syntax_class_selector.asp" target="_blank">类选择器</a>
+    例如4：<span id="id_0" class="red"><a href="https://www.w3school.com.cn/css/css_syntax_id_selector.asp" target="_blank">id选择器</a></span>优先级：ID>类选择器>标题标签
+    例如5：<span ><a>通配符选择器:*</a></span>优先级最小
+    例如6：复合选择器：<span class="hd"><a href="https://www.w3school.com.cn/css/css_syntax_descendant_selector.asp" target="_blank">后代选择器</a></span>
+                    <span><a target="_blank" href="https://www.w3school.com.cn/css/css_selector_child.asp">子元素选择器</a></span>
+                    <span><a href="https://www.w3school.com.cn/css/css_selector_descendant.asp" target="_blank">交集选择器</a></span>
+                    <span><a href="https://www.w3school.com.cn/css/css_selector_grouping.asp" target="_blank">并集选择器（群组选择器）</a></span>
+                    <span><a href="https://www.w3school.com.cn/css/css_selector_adjacent_sibling.asp" target="_blank">相邻兄弟选择器</a></span>
+                    <span><a href="https://www.w3school.com.cn/css/css_selector_attribute.asp" target="_blank">属性选择器</a></span>
+    例如7：链接伪类选择器：<span><a href="https://www.w3school.com.cn/css/css_pseudo_classes.asp" target="_blank">访问链接</a></span>
+    <b>3.外部样式表（外链式）</b>例如：<blockquote><h3>123</h3></blockquote><span>参见第六行</span><span style="color: blueviolet;" class="red">优先级：行内大于内部；行内大于外部；内部外部看覆盖</span><br>
+</blockquote>
+
+<ul><li><h1><a href="https://www.w3school.com.cn/css/css_text.asp" target="_blank">文本</a><a href="https://www.w3school.com.cn/css/css_font.asp" target="_blank">字体font-*</a></h1></li></ul>
+<blockquote>
+    <b>1.1：<a href="https://www.w3school.com.cn/cssref/pr_font_font-family.asp" target="_blank" class="normal">family 属性</a></b>
+    <b>1.2：<a href="https://www.w3school.com.cn/cssref/pr_font_font-style.asp" target="_blank">斜体：style 属性</a></b>
+    <b>1.3：<a href="https://www.w3school.com.cn/cssref/pr_font_font-variant.asp" target="_blank">字体变形：variant 属性</a></b>
+    <b>1.4：<a href="https://www.w3school.com.cn/cssref/pr_font_weight.asp" target="_blank">字体加粗：weight 属性</a></b>
+    <b>1.5：<a href="https://www.w3school.com.cn/cssref/pr_font_font-size.asp" target="_blank">字体大小：size 属性</a>单位：px、em</b>
+    <b>1.6：<a href="https://www.w3school.com.cn/cssref/pr_font_font.asp" target="_blank">选择器</a>顺序：font-style font-variant font-weight font-size/line-height font-family</b><br>
+    <b>2.1：<a href="https://www.w3school.com.cn/cssref/pr_text_text-indent.asp" target="_blank">缩进文本：indent 属性</a></b>
+    <b>2.2：<a href="https://www.w3school.com.cn/cssref/pr_text_text-align.asp" target="_blank">水平对齐：align 属性</a></b>
+    <b>2.3：<a href="https://www.w3school.com.cn/cssref/pr_text_word-spacing.asp" target="_blank">字间隔：spacing 属性</a></b>
+    <b>2.4：<a>行间距：line-hight:40px;</a></b><br>
+</blockquote>
+
+<ul><li><h1><a href="https://www.w3school.com.cn/css/css_background.asp" target="_blank">背景：background-*</a></h1></li></ul>
+<blockquote>
+    <div id="div_0">
+        <b>1.1<a href="https://www.w3school.com.cn/cssref/pr_background-color.asp" target="_blank">背景色：color 属性</a></b>
+        <b>1.2<a href="https://www.w3school.com.cn/cssref/pr_background-image.asp" target="_blank">背景图像：image 属性</a></b>
+        <b>1.3<a href="https://www.w3school.com.cn/cssref/pr_background-repeat.asp" target="_blank">背景重复：repeat 属性</a></b>
+        <b>1.4<a href="https://www.w3school.com.cn/cssref/pr_background-position.asp" target="_blank">背景定位：position 属性</a></b>
+        <b>1.5<a href="https://www.w3school.com.cn/cssref/pr_background.asp" target="_blank">所有背景属性：</a>background 属性</b>顺序：background-color background-position background-size background-repeat background-origin background-clip background-attachment background-image
+        <b>1.6<a href="" target="_blank">背景图片宽高：background-size: 300px 200px;/100% 100%;</a></b><br>
+    </div>
+</blockquote>
+
+<ul><li><h1><a href="https://www.w3school.com.cn/css/css_background.asp" target="_blank">框模型</a></h1></li></ul>
+<blockquote>
+    <span><a>1.元素框处理元素内容</a></span><br>
+    <div id="div_1"><span><a href="https://www.w3school.com.cn/css/css_border.asp" target="_blank">2.边框:border</a></span><br>
+        例如：<input type="text"><br>
+    <span><a href="https://www.w3school.com.cn/css/css_padding.asp" target="_blank">3.内边距:padding会撑开盒子</a></span><br>
+    <span><a href="https://www.w3school.com.cn/css/css_margin.asp" target="_blank">4.外边距:margin</a></span><br>
+    <span><a href="https://www.w3school.com.cn/css/css_margin_collapsing.asp" target="_blank">5.外边距合并:垂直方向两个盒子外间距取最大，提前规划距离。</a></span></div><br>
+</blockquote>
+
+<ul><li><a href="https://www.w3school.com.cn/css/css_positioning_floating.asp" target="_blank">浮动:float</a></li></ul>
+<blockquote>
+    <div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <div></div>
+    <div></div>
+    <div></div>
+    
+</blockquote>
+
+
+
+
+
+
+
+
+</body>
+</html>

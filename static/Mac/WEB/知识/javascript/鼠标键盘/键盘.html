@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        #box{
+            width: 100px;height: 100px;background-color: olivedrab;
+        }
+    </style>
+</head>
+<body>
+<!--onkeydown  inkeyup-->
+<!--键盘事件通常绑定给一些可以获取焦点（光标）的对象-->
+<!--组合键 keyCode altKey ctrlKey shiftKey-->
+<div id="box">
+    <script type="text/javascript">
+        document.onkeydown=function (event) {
+            console.log(event.keyCode)//按键编码
+            if(event.keyCode==83 && event.ctrlKey){
+                console.log(event.keyCode);//组合键
+            }
+
+        }
+
+    </script>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<a href="javascript:void(0);" class="btn">按钮</a>
+<label for="address">地址选择</label>
+<select name="address" id="address">
+    <option value="0">杭州</option>
+    <option value="1">北京</option>
+</select>
+<script>
+    //获取按钮元素
+    var butDom=document.querySelector('.btn');
+    //单击事件
+    butDom.onclick=function () {
+        console.log("你单击了哦..");
+    }
+    //双击事件
+    butDom.ondblclick=function () {
+        console.log("你双击了哦..");
+    }
+    //划入事件
+    butDom.onmouseenter=function () {
+        console.log("划入了..");
+    }
+    //划出事件
+    butDom.onmouseleave=function(){
+        console.log("划出了..");
+    }
+    //获取下拉元素
+    var addressDom=document.getElementById("address");
+    //下拉事件
+    addressDom.onchange=function () {
+        console.log("改变下拉框..");
+
+    }
+    //窗口改动
+    window.onresize=function(){
+        console.log("窗口变化了");
+    }
+</script>
+</body>
+</html>

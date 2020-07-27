@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+<!-- 导入 jQuery 库 -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+
+	$(function(){
+		$("#checkedAll_2").click(function(){
+			//获取全选和全不选按钮是否被选中
+			var flag = this.checked;
+			//1.找到所有的checkbox 什么样的checkbox name='items'的 2,再为其设置checked属性设置true or false
+			$(":checkbox[name='items']").attr("checked", flag);
+		});
+
+		//同样的为下面的checkbox 设置点击效果
+		$(":checkbox[name='items']").click(function(){
+			//判断依据 如果checkbox的长度是否等于所有被选中的checkbox长度
+			$("#checkedAll_2").attr("checked",
+					$(":checkbox[name='items']").length ==
+						$(":checkbox[name='items']:checked").length)
+		});
+	})
+
+</script>
+</head>
+<body>
+
+	<form method="post" action="">
+		你爱好的运动是？<input type="checkbox" id="checkedAll_2" />全选/全不选
+
+		<br /> <input
+			type="checkbox" name="items" value="足球" />足球 <input type="checkbox"
+			name="items" value="篮球" />篮球 <input type="checkbox" name="items"
+			value="羽毛球" />羽毛球 <input type="checkbox" name="items" value="乒乓球" />乒乓球
+	</form>
+
+</body>
+</html>

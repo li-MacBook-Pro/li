@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<!--
+    window整个浏览器窗口：
+    navigator：当前浏览器信息，识别不同的浏览器
+    location：地址
+    history：查看浏览器历史记录
+    screen：屏幕信息
+-->
+<button id="but">点击我试试</button>
+<script>
+    console.log(window);
+    console.log(navigator.userAgent);//获取浏览器版本信息
+    var but=document.getElementById("but")
+    but.onclick=function () {
+        // location.reload();//当前页面跳转，刷新
+        location="https://www.baidu.com";//进行页面自动跳转
+
+
+
+
+
+    }
+</script>
+
+</body>
+</html>

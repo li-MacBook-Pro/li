@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<h1 id="count">1</h1>
+		<script type="text/javascript">
+			
+				var count = document.getElementById("count");
+				
+				// 让h1的内容进行变化
+				
+				// count.innerHTML = 2;
+				
+				// count.innerHTML = 3;
+				
+				// 因为属性值会进行覆盖，看不到变化的效果
+				
+				// 定时调用：希望一段代码每隔一断时间就执行一次
+				
+				// 定时调用:
+				// 参数：
+				//  1.回调函数，该函数每隔一段时间被调用一次
+				// 2.每次调用间隔的时间，单位：毫秒值
+				// window.setInterval();
+				var num = 0;
+				// 返回值（定时器的标识），number类型的数据
+				var timer = setInterval(function(){
+					count.innerHTML = ++num;
+					if(num==10){
+						clearInterval(timer);
+					}
+				},1000);
+				// 关闭定时器,需要传入一个参数，定时器的标识符，
+				// alert(timer)
+				// window.clearInterval(timer);
+				
+				
+		</script>
+	</body>
+</html>

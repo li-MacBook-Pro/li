@@ -1,0 +1,9 @@
+日志级别：ERROR
+日志时间：2020-06-04 12:46:50,446 
+日志内容：name 'data' is not defined 
+日志器名称：test 
+调用日志记录函数的文件的全路径：/Users/li/PycharmProjects/li/Mac/play/交互/pycharm_logging/pycharm_logging.py 
+调用日志记录函数的文件：pycharm_logging.py 
+调用日志记录函数的函数名：error 
+调用日志记录函数的代码所在的行号：56
+

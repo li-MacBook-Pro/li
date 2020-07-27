@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        #box{
+            width: 100px;height: 100px;background-color: olivedrab;
+        }
+    </style>
+</head>
+
+<body>
+<div id="box">
+    <script type="text/javascript">
+        //当鼠标滚动时：向下box变长，向上box变短
+        //当鼠标滚轮滚动时，如果浏览器有滚动条，滚动条随着浏览器滚动
+        //这是浏览器默认行为，如果不希望，可以取消
+        var box=document.getElementById("box")
+        box.onmousewheel=function (event) {
+            if(event.wheelDelta>0){
+                //向上滚动
+                box.style.height=box.clientHeight-10+"px";
+            }else{
+                box.style.height=box.clientHeight+10+"px";
+            }
+
+        }
+
+    </script>
+
+</div>
+</body>
+</html>

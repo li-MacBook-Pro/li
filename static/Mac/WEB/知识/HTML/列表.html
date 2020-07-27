@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<h1>有序列表</h1>
+<!--<menu><li>诗词歌赋</li><li>散文精选</li><li>言情小说</li><li>武侠小说</li></menu>￼-->
+<ol start="7">
+  <li>first item</li>
+  <li>second item</li>
+  <li>third item</li>
+</ol>
+<ol>
+  <li>first item</li>
+  <li>second item      <!-- Look, the closing </li> tag is not placed here! -->
+    <ol>
+      <li>second item first subitem</li>
+      <li>second item second subitem</li>
+      <li>second item third subitem</li>
+    </ol>
+  </li>                <!-- Here is the closing </li> tag -->
+  <li>third item</li>
+</ol>
+<ol>
+  <li>first item</li>
+  <li>second item      <!-- Look, the closing </li> tag is not placed here! -->
+    <ul>
+      <li>second item first subitem</li>
+      <li>second item second subitem</li>
+      <li>second item third subitem</li>
+    </ul>
+  </li>                <!-- Here is the closing </li> tag -->
+  <li>third item</li>
+</ol>
+<ol type="I">
+    <li value="3">third item</li>
+    <li>fourth item</li>
+    <li>fifth item</li>
+</ol>
+<ol type="I">
+    <li value="3">third item</li>
+    <li>fourth item</li>
+    <li>fifth item</li>
+</ol>
+<ul>
+    <li>first item</li>
+    <li>second item</li>
+    <li>third item</li>
+</ul>
+<b>ol</b><br>
+compact <br>
+这个是布尔属性，规定了列表要用紧凑的方式渲染。这个属性的具体渲染方式由客户端决定，并不能被所有浏览器支持决定。<br>
+Note: 不要使用这个属性，这个属性已经过时：<>ol<> 元素的样式应当使用 CSS 来控制，想要获得和这个属性相似的效果，使用 CSS 属性 line-height 并设置值为 80%.<br>
+reversed HTML5<br>
+这个布尔属性规定了列表的条目采用倒序，即最不重要的条目放在列表第一个位置。<br>
+startHTML5<br>
+这是整数属性，规定了列表得条目序号的开始的值。尽管列表条目的序号可能是罗马字母顺序，如 XXXI， 或者字母，这个开始的顺序总是使用数字表示。比如想要元素序号从字母 “C” 开始，使用 <>ol start="3"<>。<br>
+Note: 这个属性在 HTML4中弃用，但是在 HTML5 中被重新引入。<br>
+type<br>
+编号类型:<br>
+'a' 表示小写字母编号；
+'A' 表示大写字母编号；
+'i' 表示小写罗马数字编号；
+'I' 表示大写罗马数字编号；
+'1' 表示数字编号（默认值）。
+除非在封闭的<>li<>元素中使用不同的type属性，否则类型集将用于整个列表。<br>
+
+<b>li</b><br>
+value<br>
+这个整数型属性表明了本 <>li<> 元素在有序列表 （由 <>ol<> 元素定义）中的序号。本属性值只能用数字，即使列表使用罗马数字或字母来展示。
+随后的列表条目会从设置的值开始计数。value 属性对于无序列表 (<>ul<>) 或者菜单 (<>menu<>) 无效。
+注： 这个属性在 HTML 4 中废弃，但是在 HTML 5 中重新引入。
+注： 在 Gecko 9.0 之前，负值会错误地转换为 0。Gecko 9.0 开始，所有整数值都可以正确解析。
+<br>
+type<br>
+这个字符型属性表明了数字的类型：
+a: 小写字母
+A: 大写字母
+i: 小写罗马数字
+I: 大写罗马数字
+1: 数字
+本属性值将覆盖 <>ol<> 元素中的同名属性值（若存在）。
+使用注解： 本属性已废弃：使用 CSS list-style-type 属性来代替。<br>
+Note: 这个属性在 HTML4中弃用，但是在 HTML5 中被重新引入。
+除非列表中序号很重要（比如，在法律或者技术文件中条目通常被需要所引用），否则请使用 CSS  list-style-type 属性替代。<br>
+<h1>无序列表</h1>
+<ul>
+    <li>无序列表</li>
+    <li>无序列表</li>
+    <li>无序列表</li>
+    <li>无序列表</li>
+</ul>
+<ul>
+  <li>first item</li>
+  <li>second item      <!-- Look, the closing </li> tag is not placed here! -->
+    <ul>
+      <li>second item first subitem</li>
+      <li>second item second subitem      <!-- Same for the second nested unordered list! -->
+        <ul>
+          <li>second item second subitem first sub-subitem</li>
+          <li>second item second subitem second sub-subitem</li>
+          <li>second item second subitem third sub-subitem</li>
+        </ul>
+      </li>           <!-- Closing </li> tag for the li that contains the third unordered list -->
+      <li>second item third subitem</li>
+    </ul>
+  </li>               <!-- Here is the closing </li> tag -->
+  <li>third item</li>
+</ul>
+<ul>
+  <li>first item</li>
+  <li>second item      <!-- Look, the closing </li> tag is not placed here! -->
+    <ol>
+      <li>second item first subitem</li>
+      <li>second item second subitem</li>
+      <li>second item third subitem</li>
+    </ol>
+  </li>                <!-- Here is the closing </li> tag -->
+  <li>third item</li>
+</ul>
+<b>ul</b><br>
+compact<br>
+此布尔属性提示列表是否需要被渲染为更紧凑的样式。用户代理决定如何解释这个属性，且并非所有浏览器都支持它。<br>
+使用说明：不要使用这个属性，因为它已经被废弃了：<>ul<> 元素应当使用 CSS 来更改样式。
+（CSS）可以提供与 compact 属性相同的效果，将  CSS 属性 line-height 的值设为 80% 即可。<br>
+type<br>
+用于设置列表的着重号样式 ，被定义在 HTML3.2 和过渡版本  HTML 4.0/4.01 中的可用值有:
+circle
+disc
+square
+第四种着重号样式被定义在 WebTV 接口中，但并不是所有浏览器都支持: triangle<br>
+<br>
+如果未设置此 HTML 属性且没有 CSS list-style-type 属性作用于这个元素，用户代理会决定使用哪种着重号样式，一般来说这也和嵌套的层级数有关。<br>
+<br>
+使用说明: 不要使用这个属性，它已经被废弃了：使用 CSS list-style-type 属性作为代替。<br>
+
+
+<h1>定义列表</h1>
+<dl>
+  <dt>Firefox</dt>
+  <dd>A free, open source, cross-platform, graphical web browser
+      developed by the Mozilla Corporation and hundreds of volunteers.
+  </dd>
+  <!-- other terms and definitions -->
+</dl>
+<dl>
+  <dt>Firefox</dt>
+  <dt>Mozilla Firefox</dt>
+  <dt>Fx</dt>
+  <dd>A free, open source, cross-platform, graphical web browser
+      developed by the Mozilla Corporation and hundreds of volunteers.</dd>
+
+  <!-- other terms and definitions -->
+</dl>
+<dl>
+  <dt>Firefox</dt>
+  <dd>A free, open source, cross-platform, graphical web browser
+      developed by the Mozilla Corporation and hundreds of volunteers.</dd>
+  <dd>The Red Panda also known as the Lesser Panda, Wah, Bear Cat or Firefox,
+      is a mostly herbivorous mammal, slightly larger than a domestic cat
+      (60 cm long).</dd>
+
+  <!-- other terms and definitions -->
+</dl>
+<dl>
+    <dt>Name</dt>
+    <dd>Godzilla</dd>
+    <dt>Born</dt>
+    <dd>1952</dd>
+    <dt>Birthplace</dt>
+    <dd>Japan</dd>
+    <dt>Color</dt>
+    <dd>Green</dd>
+</dl>
+<dl>
+  <div>
+    <dt>Name</dt>
+    <dd>Godzilla</dd>
+  </div>
+  <div>
+    <dt>Born</dt>
+    <dd>1952</dd>
+  </div>
+  <div>
+    <dt>Birthplace</dt>
+    <dd>Japan</dd>
+  </div>
+  <div>
+    <dt>Color</dt>
+    <dd>Green</dd>
+  </div>
+</dl>
+
+<b></b><br>
+自定义列表以 dl 标签开始。每个自定义列表项以 dt 开始。每个自定义列表项的定义以 dd 开始。<br>
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+				*{
+					margin: 0;
+					padding:0;
+				}
+				#box{
+					width: 100px;
+					height: 100px;
+					background-color: aqua;
+					position: absolute;
+					left: 0;
+				}
+			</style>
+		</head>
+		<body>
+			<!--  -->
+			<button id="btn">点击按钮之后div向右移动</button>
+			<button id="btn2">点击按钮之后div向左移动</button>
+			<div id="box"></div>
+			<div style="width: 0;height: 1000px;border-left: 1px black solid;position: absolute;left: 800px;"></div>
+			<script type="text/javascript">
+				var btn = document.getElementById("btn");
+				var box = document.getElementById("box");
+				var btn2 = document.getElementById("btn2");
+				var timer;
+				// btn2.onclick = function(){
+				// 	clearInterval(timer);
+				// 	 timer = setInterval(function(){
+				// 		var oldValue = parseInt(getStyle(box,"left"));//10px
+				// 		// 点击按钮之后，向左移动，就是旧值减小
+				// 		var newValue = oldValue - 10;
+				// 		if(newValue<0){
+				// 			newValue = 0;
+				// 		}
+				// 		box.style.left = newValue+"px";
+				// 		if(newValue==0){
+				// 			clearInterval(timer);
+				// 		}
+				// 	},30);
+					
+				// }
+				
+				
+				// btn.onclick = function(){
+				// 	 clearInterval(timer);
+				// 	 timer = setInterval(function(){
+				// 		var oldValue = parseInt(getStyle(box,"left"));//10px
+				// 		var newValue = oldValue + 1;
+				// 		if(newValue>800){
+				// 			newValue = 800;
+				// 		}
+				// 		box.style.left = newValue+"px";
+				// 		if(newValue>=800){
+				// 			clearInterval(timer);
+				// 		}
+				// 	},30);
+				// 	}
+				function getStyle(obj,name){
+					 var o = getComputedStyle(obj,null);
+					 return o[name];
+					
+				}
+				
+				// 以上代码重复率高，抽取函数让代码灵活性变高
+				// 参数1：obj:要变化的对象
+				// 参数2：speed ：移动的速度(正数：向右移动，负数:向左移动)
+				// 参数3：target:目标位置 0
+				function move(obj,target,speed){
+					clearInterval(timer);
+					// 调用者每次传入速度的时候，需要通过参数决定方向
+					// 调用者不需要考虑那么多，直接传入整数
+					// 判断速度的正负
+					// 如果0向800移动：则speed为正
+					// 如果800向0移动，则speed为负
+					// 先获取元素当前位置
+					var current = parseInt(getStyle(obj,"left"));
+					if(current>target){//target=0  current=100
+						// 满足条件则为speed负数
+						speed = -speed;
+					}
+					 timer = setInterval(function(){
+						var oldValue = parseInt(getStyle(obj,"left"));//10px
+						var newValue = oldValue + speed;
+						// 向左移动，需要判断newValue是否小于target
+						// 向右移动，需要判断newValue是否大于target
+						if((speed<0 && newValue<target )|| (speed>0&&newValue>target)){
+							//speed : -1			speed:1
+							 //target :0   			 target:800
+							 //newValue = 0			newValue=801
+							newValue = target;
+						}
+						obj.style.left = newValue+"px";
+						if(newValue==target){
+							clearInterval(timer);
+						}
+					},30);
+					
+				}
+				btn.onclick = function(){
+					move(box,800,10);
+				}	
+				btn2.onclick = function(){
+					move(box,0,10);
+				}
+			</script>
+	</body>
+</html>

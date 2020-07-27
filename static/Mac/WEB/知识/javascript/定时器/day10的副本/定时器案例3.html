@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+				*{
+					margin: 0;
+					padding:0;
+				}
+				#box{
+					width: 100px;
+					height: 100px;
+					background-color: aqua;
+					position: absolute;
+					top:100px;
+					left: 0;
+				}
+				#box2{
+					width: 100px;
+					height: 100px;
+					background-color: red;
+					position: absolute;
+					top:280px;
+					/* left: 0; */
+				}
+			</style>
+	</head>
+	<body>
+		<div id="box"></div>
+		<div id="box2"></div>
+		<div style="width: 0;height: 1000px;border-left: 1px black solid;position: absolute;left: 800px;"></div>
+		<button id="btn">点击按钮之后div向右移动</button>
+		<button id="btn2">点击按钮之后div向左移动</button>
+		<button id="btn3">点击按钮之后div2向右移动</button>
+		<button id="btn4">测试</button>
+		<script type="text/javascript">
+			var btn = document.getElementById("btn");
+			var box = document.getElementById("box");
+			var btn2 = document.getElementById("btn2");
+			var btn3 = document.getElementById("btn3");
+			var btn4 = document.getElementById("btn4");
+			var box2 = document.getElementById("box2");
+			var timer ;
+			// 定时器的标识由timer保存，所有正在执行的定时器都是使用这个变量保存的 
+			// 解决？box有自己的 box2也有自己的 两方互不影响
+			// 要让函数变得灵活，除了可以往左右移动之外，需要上下或者改变宽度或者高度
+			// 参数：attr:属性 left top width height
+			
+			// 元素移动完之后，继续再移动
+			// 参数：callback  回调函数
+			function move(obj,attr,target,speed,callback){
+				clearInterval(obj.timer);
+				var current = parseInt(getStyle(obj,attr));
+				if(current>target){
+					speed = -speed;
+				}
+				 obj.timer = setInterval(function(){
+					var oldValue = parseInt(getStyle(obj,attr));//10px
+					var newValue = oldValue + speed;
+					if((speed<0 && newValue<target )|| (speed>0&&newValue>target)){
+						newValue = target;
+					}
+					obj.style[attr] = newValue+"px";
+					if(newValue==target){
+						clearInterval(obj.timer);
+						// 移动完毕之后，调用回调函数
+						callback();
+					}
+				},30);
+			}
+			function getStyle(obj,name){
+				 var o = getComputedStyle(obj,null);
+				 return o[name];
+				
+			}
+			
+			btn.onclick = function(){
+				move(box,"left",800,10);
+			}	
+			btn2.onclick = function(){
+				move(box,"left",0,10);
+			}
+			btn3.onclick = function(){
+				move(box2,"left",800,20)
+			}
+			btn4.onclick = function(){
+				move(box2,"left",800,20,function(){
+					move(box2,"top",800,20,function(){
+						move(box2,"top",200,10,function(){
+							
+						});
+					})
+					
+				})
+			}
+	</script>
+	</body>
+</html>

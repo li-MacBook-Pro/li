@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            margin: 0;padding: 0;
+        }
+        #box{
+            width: 100px;height: 100px;background-color: green;position: absolute;
+        }
+    </style>
+</head>
+<body>
+<button id="btn">点击后，div右移</button>
+<div id="box"></div>
+<script type="text/javascript">
+    var btn=document.getElementById("btn");
+    var box=document.getElementById("box");
+
+    btn.onclick=function () {
+        box.style.left=200+"px";
+        // alert(box.offsetLeft)
+    }
+    setInterval(function () {
+        // box.style.left=200+"px";
+        // var oldValue=box.offsetLeft;
+        // alert(oldValue)
+
+        // var oldValue=box.offsetLeft;
+        // box.style.left=oldValue+10+"px";
+
+
+        //获取div原来的left值
+        // var oldValue=box.offsetLeft;
+        // box.style.left=oldValue+10+"px";
+        //让函数更加灵活，修改left、top、wight
+        var oldValue=parseInt(getStyle(box,"left"));
+        var newValue=oldValue+10;
+
+        //字符串转number  +
+        //+"10px"--->NaN
+        //parseInt:将字符串中数字提取出来，遇到字母便停止。
+        // console.log(parseInt("10px10px"))
+
+        // 将新值设置给box
+        box.style.left=newValue+10+"px";
+
+    },100);
+    //让函数更加灵活，修改left、top、wight
+    //获取元素样式函数//style:改变为行内样式，只对行内元素有效，在此不可用。
+    //obj：某一个元素
+    //name：样式名
+    //window.getComputedStyle();可以读取当前元素样式。参数1：要获取样式的元素2、可以传递一个伪元素也可以null。获取当前元素所有样式，获取  对象.样式。
+    function getStyle(obj,name) {
+        var o=getComputedStyle(box,null);
+        // console.log(o);
+        // console.log(o.width)
+        // return o.name;//变量不能这养写
+        return o[name];//变量名用中括号
+    }
+    // getStyle(box,"left");
+    // var oldValue=getStyle(box,"left");
+    // console.log(oldValue)
+</script>
+</body>
+</html>

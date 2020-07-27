@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+					div{
+						width: 200px;
+						height: 200px;
+						background-color: aqua;
+						display: none;
+					}
+
+		</style>
+		<script src="js/jquery-1.11.3.min.js"></script>
+</head>
+<body>
+<button id="show">显示</button>
+<button id="hide">隐藏</button>
+<button id="toggle">切换</button>
+<div></div>
+<script>
+
+
+    $("#show").click(function(){
+        // 让div显示
+        // show函数没有设置参数，没有动画效果，如果想要有动画效果，就应该设置参数
+        // 参数1：执行动画的时间：毫秒数 也可以传入代表时长的字符串：fast（200毫秒） normal（400毫秒） slow（600毫秒）
+        // 如果代表时长的字符串写错了，相当于写了一个normal
+        // $("div").show("normal");
+        // 参数2：回调函数
+        $("div").show("normal",function(){
+            // alert("动画执行完毕")
+        });
+    });
+    $("#hide").click(function(){
+        $("div").hide(1000);
+    })
+    $("#toggle").click(function(){
+        $("div").toggle(1000);
+    });
+
+
+</script>
+</body>
+</html>

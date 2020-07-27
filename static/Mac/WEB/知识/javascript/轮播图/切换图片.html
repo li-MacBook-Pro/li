@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			#outer{
+				width: 550px;
+				margin: 50px auto;/*左右居中、外边距*/
+				padding: 10px;/*内边距*/
+				background-color: antiquewhite;
+				text-align: center;/*文本居中*/
+			}
+
+		</style>
+	</head>
+	<body>
+
+		<div id="outer">
+			<img src="../img/1.png" alt="">
+			<button id="pre">上一张</button>
+			<button id="next">下一张</button>
+			<p id="info"></p>
+		</div>
+		<script>
+			// 点击按钮实现图片切换
+
+			// 事件
+			// 1.先获取按钮对象
+			var pre  = document.getElementById("pre");
+			var next = document.getElementById("next");
+
+			// 图片切换其实就是改变img标签的src属性值
+			var img = document.getElementsByTagName("img")[0];
+
+			// 定义数组保存所有图片路径
+			var imgarr = ["img/1.png","img/2.png","img/3.png","img/4.png","img/5.png"];
+
+			// 定义变量用来保存当前正在显示的图片下标值
+			var index = 0;
+
+			// 需要改动p标签的提示信息，所以先提前获取p对象
+			var p = document.getElementById("info");
+			p.innerHTML = "小主，一共有"+imgarr.length+"张图片，当前显示为第"+(index+1)+"张";
+			// 字符串拼接变量:找到要写的变量区域，先打两个双引号，在双引号中间加两个加号，在加号中间加变量名
+
+			// 分别绑定点击事件
+			//简单事件
+			//onclick单击事件  ondblclick双击事件
+			//onmouseenter鼠标滑入  onmouseleave鼠标划出
+			//onresize窗口变化  onchange改变下拉框
+			pre.onclick = function(){
+				index--;
+				// 判断index是否小于0
+				if(index<0){
+					index = imgarr.length-1;
+				}
+				img.src = imgarr[index];
+				p.innerHTML = "小主，一共有"+imgarr.length+"张图片，当前显示为第"+(index+1)+"张";
+			}
+
+			next.onclick = function(){
+				index++;
+				if(index>imgarr.length-1){
+					index = 0;
+				}
+				img.src = imgarr[index];
+				p.innerHTML = "小主，一共有"+imgarr.length+"张图片，当前显示为第"+(index+1)+"张";
+			}
+		</script>
+
+	</body>
+</html>

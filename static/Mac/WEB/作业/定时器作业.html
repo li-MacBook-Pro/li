@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .color{
+            color:#1acbcb;
+            font-size: 15px;
+        }
+    </style>
+</head>
+<body>
+<div style="width: 100%;height: 100px;text-align: center;position: absolute;top:100px;">
+    <h1>离敌军到达战场还有<span id="count">30</span>秒</h1>
+</div>
+<div id="mydate" style="width: 100%;height: 100px;text-align: center;position: absolute;top:200px;">
+    <label>
+        <span>现在是北京时间：</span>
+        <span id="y"></span><span class="color"> 年 </span><span id="g"></span><span class="color"> 月 </span><span id="r"></span><span class="color"> 日 </span><span id="h"></span>
+    </label>
+</div>
+<script>
+    var count=document.getElementById("count");
+    var y=document.getElementById("y");var g=document.getElementById("g");
+    var r=document.getElementById("r");var h=document.getElementById("h");
+    var num=30;
+    count.timer= setInterval(function () {
+        count.innerHTML = --num;if (num == 0) {clearInterval(count.timer);}
+    },1000);
+    mydate.timer= setInterval(function () {
+        var mydate=document.getElementById("mydate")
+        var date = new Date();var seperator2 = " : ";
+        var month = date.getMonth() + 1 < 10 ? "0" + (date.getMonth() + 1) : date.getMonth() + 1;
+        var strDate = date.getDate() < 10 ? "0" + date.getDate() : date.getDate();
+        var y=document.getElementById("y");var g=document.getElementById("g");
+        var r=document.getElementById("r");var h=document.getElementById("h");
+        var currentdate = date.getHours() + seperator2 + date.getMinutes()+ seperator2 + date.getSeconds();
+        y.innerHTML=date.getFullYear();g.innerHTML=month;r.innerHTML=strDate;h.innerHTML=currentdate;
+    },1000);
+</script>
+</body>
+</html>

@@ -1,0 +1,122 @@
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.bootcss.com/jquery/2.1.0/jquery.min.js"></script>
+    <style>
+        .waterfall{
+            max-width:700px;
+            margin:0 auto;
+        }
+        .waterfall img{
+            width:100px;
+            /* 绝对定位实现瀑布流布局 */
+            position: absolute;
+            margin:5px;
+            /* 给图片重新排列加上动画效果 */
+            transition: all 0.5s;
+        }
+
+    </style>
+</head>
+<body>
+     <div class="waterfall">
+        <img src="http://placekitten.com/100/100" alt="300*100" style="left: 0px; top: 0px;">
+        <img src="http://placekitten.com/100/70" alt="300*70" style="left: 110px; top: 0px;">
+        <img src="http://placekitten.com/100/150" alt="300*150" style="left: 220px; top: 0px;">
+        <img src="http://placekitten.com/100/250" alt="300*250" style="left: 330px; top: 0px;">
+        <img src="http://placekitten.com/100/80" alt="300*80" style="left: 440px; top: 0px;">
+        <img src="http://placekitten.com/100/90" alt="300*90" style="left: 110px; top: 80px;">
+        <img src="http://placekitten.com/100/120" alt="300*120" style="left: 440px; top: 90px;">
+        <img src="http://placekitten.com/100/180" alt="300*180" style="left: 0px; top: 110px;">
+        <img src="http://placekitten.com/100/100" alt="300*100" style="left: 220px; top: 160px;">
+        <img src="http://placekitten.com/100/70" alt="300*70" style="left: 110px; top: 180px;">
+        <img src="http://placekitten.com/100/150" alt="300*150" style="left: 440px; top: 220px;">
+        <img src="http://placekitten.com/100/250" alt="300*250" style="left: 110px; top: 260px;">
+        <img src="http://placekitten.com/100/80" alt="300*80" style="left: 330px; top: 260px;">
+        <img src="http://placekitten.com/100/90" alt="300*90" style="left: 220px; top: 270px;">
+        <img src="http://placekitten.com/100/120" alt="300*120" style="left: 0px; top: 300px;">
+        <img src="http://placekitten.com/100/180" alt="300*180" style="left: 330px; top: 350px;">
+     </div>
+     <script>
+        //  列的数量（容器的宽度除以图片的宽度得出的）
+         var colCount;
+        //  存放每一列的高度的数组
+         var colHeightArray = [];
+        //  每张图片的宽度
+        // 这里只所以用 outerWidth 是因为图片可能会有边框 margin之类的，一并计算进去
+        var imgWidth = $('.waterfall img').outerWidth(true);
+
+         colCount = Math.floor($('.waterfall').width() / imgWidth);
+         console.log(colCount);
+
+        //  得到列数之后。对数组进行初始化，每一些的高度初始化为0
+        for(var i = 0;i < colCount;i++){
+            colHeightArray[i] = 0;
+        }
+
+        console.log($('.waterfall img').eq(2).height());
+
+        // 然后开始摆放位置了，但是如果图片还没有加载，那么计算得到的列的宽高是不对的，所以要先确认图片加载
+        $('.waterfall img').on('load',function(){
+            // 我们假设数组里第一个高度值是最小的
+            var minValue = colHeightArray[0];
+            // 最小的高度的下标是0
+            var minIndex = 0
+            // 然后遍历高度数组，找出最小值，如果还有值比minVlue小，就把这个值作为最小值，它的下标作为最小值的下标
+            for(var i = 0;i< colCount;i++){
+                if(colHeightArray[i]<minValue){
+                    minValue = colHeightArray[i];
+                    minIndex = i;
+                }
+            }
+            // 给先加载出来的图片设置定位，摆放图片
+            $(this).css({
+                left: minIndex * imgWidth,
+                top: minValue
+            })
+            console.log(minValue);
+
+            // 图片摆放好，这一列的高度就要进行更新了
+            colHeightArray[minIndex] += $(this).outerHeight(true)
+
+        })
+
+
+        // 下边这一部分，是实现了当窗口尺寸发生变化的时候，图片实现重新排列
+        $(window).on('resize',function(){
+            // 每次窗口大小改变以后，列数，跟每列的高度数组，都会发生变化，所以要重新声明
+            var colCount;
+            var colHeightArray = [];
+            // 每次尺寸变化，都要重新计算列数
+            colCount = Math.floor($('.waterfall').width() / imgWidth);
+
+            // 初始化每列的高度
+            for(var i=0;i<colCount;i++){
+                colHeightArray[i] = 0;
+            }
+
+            // 因为上边图片已经加载过了，所以直接遍历图片
+            $('.waterfall img').each(function(){
+                var minValue = colHeightArray[0];
+                var minIndex = 0;
+
+                for(var i=0;i<colCount;i++){
+                    if(colHeightArray[i]<minValue){
+                        minValue = colHeightArray[i];
+                        minIndex = i;
+                    }
+                }
+                // 给遍历到的图片设置位置
+                $(this).css({
+                    left:minIndex*imgWidth,
+                    top:minValue
+                })
+                // 设置位置后，更新高度
+                colHeightArray[minIndex] += $(this).outerHeight(true);
+            })
+        })
+     </script>
+
+</body></html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title></title>
+</head>
+<body>
+<button id="btn1">获取属性</button><button id="btn2">设置属性</button><button id="btn3">移除属性</button><br>
+<img src="images/aj1.jpg">
+<!-- attr(); removeAttr（） -->
+<script src="js/jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+	$("#btn1").click(function(){
+		// 自带属性和自定义属性都可以获取，如果没有对应值，则会返回undefined
+		console.log($("img").attr("aaa"));
+
+	});
+	$("#btn2").click(function(){
+		// 设置属性 以前有src属性，更改这个属性值
+		// $("img").attr("src","images/aj2.jpg");
+		// 修改自定义属性
+		// $("img").attr("abc","hahah");
+		// 如果元素原来没有这个属性，则是添加属性
+		$("img").attr({src:"images/aj2.jpg",aaa:"abc",bbb:"bbbb"});
+	});
+	$("#btn3").click(function(){
+		$("img").removeAttr("src aaa bbb");
+	});
+</script>
+</body>
+</html>

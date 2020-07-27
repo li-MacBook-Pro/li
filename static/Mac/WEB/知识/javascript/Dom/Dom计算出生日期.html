@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+        <script type="text/javascript">
+            function disptime(){
+            var date1= '1999/09/29 07:30:00';
+            var date2 = new Date();
+            var date3 = date2.getTime() - new Date(date1).getTime();
+            var days    =Math.floor(  date3/(24*3600*1000));
+            var hours   =Math.floor(( date3%(24*3600*1000)) /(3600*1000));
+            var minutes =Math.floor(((date3%(24*3600*1000)  %(3600*1000)))/(60*1000));
+            var seconds =Math.round(((date3%(24*3600*1000)  %(3600*1000))%(60*1000))/1000);
+            // console.log(" 相差 "+days+"天 "+hours+" 小时 "+minutes+" 分钟 "+seconds+" 秒")
+            document.getElementById("myclock").innerHTML="<h1>相差 "+days+"天 "+hours+" 小时 "+minutes+" 分钟 "+seconds+" 秒<h1>";
+            var myTime=setTimeout("disptime()",1000);
+            }
+        </script>
+    </head>
+<body onload="disptime()">
+<div id="myclock"  style="
+				width: 530px;
+				margin: 50px auto;/*左右居中、外边距*/
+				text-align: center;/*文本居中*/
+                position:relative; /*    相对定位*/">
+</div>
+
+</body>
+
+</html>

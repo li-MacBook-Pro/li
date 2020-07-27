@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            margin: 0;padding: 0;
+        }
+        #box{
+            width: 100px;height: 100px;background-color: green;position: absolute;
+        }
+    </style>
+</head>
+<body>
+<button id="btn">点击后，div右移</button>
+<div id="box"></div>
+<script type="text/javascript">
+    var btn=document.getElementById("btn")
+    var box=document.getElementById("box")
+    btn.onclick=function () {
+        //上、左移动
+        box.style.left=200+"px";
+    }
+</script>
+
+</body>
+</html>

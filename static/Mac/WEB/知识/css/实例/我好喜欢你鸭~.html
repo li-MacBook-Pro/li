@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>我好喜欢你鸭~</title>
+<!--    <link rel="stylesheet" href="我好喜欢你鸭~.css">-->
+    <style>
+        *{
+    margin: 0;
+    padding: 0;
+}body{
+    background-color: #e9d3c6;
+}
+.container{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+    box-shadow: inset 0px -5px 10px -7px rgba(0,0,0,.5), inset 0px 5px 10px -7px rgba(0,0,0,.5);
+    padding: 5% 0%;
+    overflow: hidden;
+}
+.container div{
+    width: 2.5em;
+    height: 2.5em;
+    border-radius: 50%;
+    float: left;
+    font-size: 1.5em;
+    line-height: 2.5em;
+    animation: bounce 1.5s infinite ease-in-out;
+}
+.container div:nth-child(1){
+    background-color: #addfe6;
+    color: #555555;
+    animation-delay: 0ms;
+}
+.container div:nth-child(2){
+    background-color: #b5d1a0;
+    color: #555555;
+    animation-delay: 50ms;
+}
+.container div:nth-child(3){
+    background-color: #61e7d3;
+    color: #555555;
+    animation-delay: 100ms;
+}
+.container div:nth-child(4){
+    background-color: #cea6e7;
+    color: #555555;
+    animation-delay: 150ms;
+}
+.container div:nth-child(5){
+    background-color: #64bf4e;
+    color: #555555;
+    animation-delay: 200ms;
+}
+.container div:nth-child(6){
+    background-color: #e78686;
+    color: #555555;
+    animation-delay: 250ms;
+}
+.container div:nth-child(7){
+    background-color: #f1a3cf;
+    color: #555555;
+    animation-delay: 300ms;
+}
+
+@keyframes bounce {
+    0%{
+        transform: translateY(-150px);
+    }
+    20%{
+        transform: translateY(30px);
+    }
+    30%{
+        transform: translateY(-10px);
+    }
+    40%{
+        transform: translateY(0px);
+    }
+    60%{
+        transform: translateY(0px);
+    }
+    80%{
+        transform: translateY(-20px);
+    }
+    100%{
+        transform: translateY(150px);
+    }
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div>我</div>
+        <div>好</div>
+        <div>喜</div>
+        <div>欢</div>
+        <div>你</div>
+        <div>鸭</div>
+        <div>~</div>
+    </div>
+</body>
+</html>

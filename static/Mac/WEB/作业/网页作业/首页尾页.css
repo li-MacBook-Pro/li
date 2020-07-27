@@ -1,0 +1,92 @@
+*{
+    margin:0;padding: 0;
+}
+.header{
+    width: 100%;
+    height: 69px;
+    background-color: black;
+}
+.h_box{
+    width: 1200px;
+    height: 100%;
+    background-color: black;
+    margin: auto; /*  居中  */
+}
+.logo{
+    width: 235px;
+    height: 69px;
+    float: left;
+}
+.logo_title{
+    display: block; /*转为快标签*/
+    width: 100%;
+    height: 100%;
+    /*background:url("https://www.python.org/static/img/python-logo.png");*/
+}
+.menu{
+    float: left;
+    list-style: none; /*去除li标签小点点*/
+    line-height: 69px;
+    margin-left:100px ;/*外边框边距*/
+
+}
+.menu li{
+    float: left;
+    margin-left: 60px;
+    font-size: 20px;
+}
+a{
+    color: white;/*字体颜色*/
+}
+/*阿里里图标*/
+.a_box{
+    height: 100%;
+    float: right;
+}
+.a_box span{
+    line-height: 69px;      /*      */
+    margin: auto; /*  居中  */
+}
+.icon-zhanghu:before{
+    color: white;
+    /*font-size: 20px;*/
+}
+.a_box span a{
+    color: white;
+    text-decoration: none;
+}
+
+
+
+
+
+
+
+
+
+.footer{
+    width: 100%;
+    height: 160px;
+    background-color: gray;
+}
+.f_logo{
+    display: block; /*转为快标签*/
+    /*width: 100%;*/
+    /*height: 100%;*/
+    color: white;
+    width: 1200px;
+    background:url("https://www.python.org/static/img/python-logo.png")no-repeat;/*no-repeat不平铺*/
+    padding: 30px 0;/* 高度             */
+    margin: auto;/* 居中*/
+}
+.f_bottom{
+    text-align: center;/*文字剧中*/
+    background-color: black;
+    line-height: 70px;
+
+}
+.f_bottom p{
+    color: white;
+    width: 100%;
+
+}

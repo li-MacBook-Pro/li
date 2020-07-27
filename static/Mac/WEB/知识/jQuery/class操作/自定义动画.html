@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<style type="text/css">
+		div{
+			width: 100px;
+			height: 100px;
+			background-color: #FF0000;
+			position: absolute;
+			left: 0;
+			top: 50px;
+		}
+		#box2{
+			background-color: #00FFFF;
+			top: 200px;
+		}
+	</style>
+	<script src="js/jquery-1.11.3.min.js"></script>
+	<script src="https://cdn.bootcdn.net/ajax/libs/jquery-color/2.1.2/jquery.color.js"></script>
+</head>
+<body>
+
+
+<button id="btn1">从左到右800</button>
+<div id="box1"></div>
+<div id="box2"></div>
+<script>
+	$("#btn1").click(function(){
+		// 让div移动到800像素位置
+		// 参数1：必选  对象，代表需要做动画的属性
+		// 参数2：可选 执行动画的时长  单位是毫秒
+		// 参数3：可选 缓动(swing)   匀速（linear）
+		// 参数4：可选 回调函数
+		$("#box1").animate({left:800,width:200,height:200},2000,"linear",function(){
+			$("#box1").animate({left:400,width:300,height:300,top:150},2000,"linear",function(){
+				$("#box1").animate({left:200,width:400,height:400,top:200},2000,"linear",function(){
+					$("#box1").animate({"background-color":'gray'},2000,"linear");
+				});
+			});
+		});
+		// $("#box2").animate({left:800},2000,"swing");
+	});
+
+
+
+</script>
+</body>
+</html>

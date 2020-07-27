@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            margin-top:10px;
+            /*background-color: olivedrab;*/
+        }
+        .bgc{
+            background-color: green;
+        }
+        .fontSize30{
+            font-size: 30px;
+        }
+        .width200{
+            width: 200px;
+        }
+    </style>
+    <script src="js/jquery-1.11.3.min.js" type="text/javascript"></script>
+
+</head>
+<body>
+<input type="button" value="添加类" id="addClass">
+<input type="button" value="移除类" id="removeClass">
+<input type="button" value="判断类" id="hasClass">
+<input type="button" value="切换类" id="toggleClass">
+<div id="box" class="bgc">div</div>
+<script>
+    $("#addClass").click(function () {
+        // 给id为box的元素添加类
+        $("#box").addClass("fontSize30 width200");
+    });
+    $("#removeClass").click(function () {
+        //不传参数，默认删除所有参数。// 给id为box的元素移除类,removeClass不传参 ，代表清空所有class
+        $("#box").removeClass();
+    });
+     $("#hasClass").click(function () {
+         // 如果有则返回true，反之则false
+         console.log($("#box").hasClass("fontSize30"));
+    });
+      $("#toggleClass").click(function () {
+          //如果有某个元素，则移除，没有则添加// 如果这个元素有某个class，则移除，没有则添加
+          $("#box").toggleClass("fontSize30");
+    });
+</script>
+</body>
+</html>

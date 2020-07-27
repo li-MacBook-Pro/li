@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        #box{
+            width: 100px;
+            height: 100px;
+            background-color: olivedrab;
+            position: absolute;/*相对定位*/
+        }
+    </style>
+</head>
+<body>
+<div id="box"></div>
+<script>
+    //拖拽流程
+    //1、当鼠标在被拖拽元素上按下时，开始拖拽；
+        //onmousedown
+    //2、当鼠标移动时被拖拽元素跟随鼠标一起移动；
+        //  onmousemove
+    //3、当鼠标松开时，被拖拽元素就固定当前松开位置；
+        //  onmouseup
+    var box=document.getElementById("box")
+    box.onmousedown=function () {//当鼠标在被拖拽元素上按下时，开始拖拽；
+        var ol=event.clientX-box.offsetLeft;//计算让事件在原来的位置
+        var ot=event.clientY-box.offsetTop;
+        document.onmousemove=function () {//当鼠标移动时被拖拽元素跟随鼠标一起移动；
+            var x=event.pageX-ol;//  可见页面都可以移动
+            var y=event.pageY-ot;
+            box.style.left=x+'px';
+            box.style.top=y+"px";
+
+            document.onmouseup=function () {//当鼠标松开时，被拖拽元素就固定当前松开位置；
+                document.onmousemove=null;
+                // document.onmouseup=null;//
+                document.onmousedown=null;//拖拽一次
+        }
+        }
+
+    }
+</script>
+
+</body>
+</html>

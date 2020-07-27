@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<style>
+		div{
+			width: 200px;
+			height: 200px;
+			background-color: aqua;
+			/*display: none;!*	隐藏		*!*/
+		}
+	</style>
+</head>
+<body>
+<button id="btn1">开始动画</button>
+<button id="btn2">结束动画</button>
+<div></div>
+<script src="js/jquery-1.11.3.min.js"></script>
+<script>
+	$("#btn1").click(function(){
+		$("div").slideUp(2000).slideDown(2000);
+	})
+	// stop函数
+	$("#btn2").click(function(){
+		// 1.是否清除队列
+		// 2.是否跳转到最终效果
+		$("div").stop(true,true);
+		// $("div").stop(false,false);
+	})
+</script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<input type="text" id="inp">
+<script>
+    document.onmousemove=function (event) {
+        var inp=document.getElementById("inp");
+        //事件对象：当事件相应函数被触发时，浏览器每次都讲一个事件对象作为实参传递进入相应函数
+        // inp.value="值"
+        // console.log(event)
+        var x=event.clientX;
+        var y=event.clientY;
+        // console.log("x="+x+"y="+y)
+        inp.value="x="+x+" y="+y
+
+
+    }
+</script>
+</body>
+</html>

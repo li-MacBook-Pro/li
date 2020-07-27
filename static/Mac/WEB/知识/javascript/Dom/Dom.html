@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			#box{
+				width:100px;
+				height: 100px;
+				background-color: olivedrab;!important;/*优先级最高*/
+			}
+		</style>
+	</head>
+
+	<body>
+
+		<!--
+		Dom:
+		  D:document :文档
+		  o:Object
+		  m:model 模型
+		  js通过dom操作html页面
+		  节点：Node
+			类型：
+				1.文档节点：整个html文档
+				2.元素节点：标签
+				3.属性节点：属性
+				4.文本节点：标签之间的文字
+		 -->
+		<!-- <button id="btn" onclick="alert('你点我干嘛！！！')">sssss</button> -->
+		<button id="btn">sssss</button>
+
+		<a href="javascript:void(0);" class="btn">按钮</a>
+		<input type="text" id="username" name="xixi" value="coco" class="abc" />
+<script>
+
+			// 浏览器已经为我们提供文档节点对象，可以在页面中直接使用，文档节点代表的是整个网页，叫做document对象
+			// console.log(document)
+			// 可以通过id获取按钮对象
+			var btn = document.getElementById("btn");
+			// 修改按钮文字
+			// btn.innerHTML = "我是一个新的按钮";
+			// console.log(btn.innerHTML);//button内容，innerHTML只能在双标签内使用。
+
+
+			// 事件，用户和浏览器之间的交互行为，比如：点击按钮，鼠标移动....
+			// 记住：事件发生时需要处理事件
+			// 处理事件：可以设置js代码，当事件触发时，来执行
+
+			// 1. 在标签中添加js代码 不推荐使用
+
+			// 2.可以为按钮的对应事件绑定函数
+			// 给按钮绑定点击事件
+			btn.onclick = function(){
+				alert("还扒拉我！");
+			}
+			// 通过标签名获取元素对象
+			// document.getElementsByTagName("标签名");
+			// 注意：返回的是一组元素标对象数组，通过下标来获取
+
+			// 通过name获取元素对象
+			// document.getElementsByName("name名");
+			// 注意：返回的是一组元素对象数组，通过下标来获取
+
+			// document.getElementsByClassName("class名");
+			// 注意：返回的是一组元素对象数组，用过下标来获取
+
+
+
+			// 获取input\对象，单标签。
+			var inp = document.getElementById("username");
+
+			// 如果想要获取元素节点的属性 value  直接使用对象名.属性名
+
+			console.log(inp.value);
+			console.log(inp.type);
+			console.log(inp.name);
+			// 如果想要拿到的是class值，就必须要使用className
+			console.log(inp.className);
+</script>
+
+
+
+
+<div class="div1">
+			<div>div1中div</div>
+</div>
+<div class="div1">
+			<div>div1中div</div>
+</div>
+<div class="div1">
+			<div>div1中div</div>
+</div>
+
+<div></div>
+<script type="text/javascript">
+			// 返回是单个对象，如果根据选择器找到了多个，只会返回第一个。选择器查找元素
+			var div = document.querySelector(".div1 div");
+			// 如果想要匹配所有，返回的是复数。
+			var divs = document.querySelectorAll(".div1 div");
+</script>
+
+
+
+
+
+
+<div id="box"></div>
+<button id="btn_0">点我试试</button>
+
+		<!-- 需求：点击按钮后修改box的宽高 -->
+<script type="text/javascript">
+			var btn = document.getElementById("btn_0");
+			btn.onclick = function(){
+				// 修改box
+				var box = document.getElementById("box");
+				// 修改css属性值
+				// 元素.style.样式名 = 样式值;
+				box.style.width = "200px";
+				box.style.height = "200px";
+
+				// 如果css的样式名中出现 - ：这种不合法，需要去除-并且把符号后的第一个字母改为大写，命名法则。
+				// box.style.background-color = "red";
+				box.style.backgroundColor = "red";
+
+				// 通过style属性设置的样式都是行内样式，而行内样式优先级更高，通过js修改会立即显示、可以设置优先级:!important;
+			}
+</script>
+
+
+
+
+</body>
+</html>

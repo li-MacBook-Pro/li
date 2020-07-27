@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" type="text/javascript"></script>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        ul {
+            list-style: none;
+        }
+        .wrap {
+            width: 330px;
+            height: 30px;
+            margin: 100px auto 0;
+            padding-left: 10px;
+            background-image: url(images/bg.jpg);
+        }
+        .wrap li{
+            background-image: url(images/libg.jpg);
+        }
+        .wrap > ul > li {
+            float: left;
+            margin-right: 10px;
+            position: relative;
+        }
+        .wrap a {
+            display: block;
+            height: 30px;
+            width: 100px;
+            text-decoration: none;
+            color: #000;
+            line-height: 30px;
+            text-align: center;
+        }
+        .wrap li ul {
+            position: absolute;
+            top: 30px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+		<!-- 需求：
+		 给一级菜单设置鼠标移入事件，二级菜单显示
+		 给一级菜单设置鼠标移出时间，二级菜单隐藏
+		 -->
+<div class="wrap">
+    <ul>
+        <li>
+            <a href="javascript:void(0);">一级菜单1</a>
+            <ul>
+                <li><a href="javascript:void(0);">二级菜单1</a></li>
+                <li><a href="javascript:void(0);">二级菜单2</a></li>
+                <li><a href="javascript:void(0);">二级菜单3</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="javascript:void(0);">一级菜单1</a>
+            <ul>
+                <li><a href="javascript:void(0);">二级菜单1</a></li>
+                <li><a href="javascript:void(0);">二级菜单2</a></li>
+                <li><a href="javascript:void(0);">二级菜单3</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="javascript:void(0);">一级菜单1</a>
+            <ul>
+                <li><a href="javascript:void(0);">二级菜单1</a></li>
+                <li><a href="javascript:void(0);">二级菜单2</a></li>
+                <li><a href="javascript:void(0);">二级菜单3</a></li>
+            </ul>
+        </li>
+    </ul>
+</div>
+<script>
+    // 获取li，过滤器选择找到li，mouseover鼠标移入事件
+    //onclick鼠标点击事件
+    $(".wrap>ul>li").mouseover(function(){
+        // console.log("11")
+        // 给所有的一级菜单绑定了事件，如何找到对应的二级菜单
+        // this:谁触发了这个事件，那么this就代表谁，获取到的是dom对象
+        // 如果想要让某一个元素显示或隐藏可以直接修改元素的css样式//"display","block"显示
+        // $(this).children("ul").;//显示
+        // show()===css("display","block")：显示函数；children()：获取当前元素下的字元素，
+        $(this).children("ul").show();//父子关系，只能触发ul标签
+        // $(this).siblings("ul").show();//兄弟关系$(".wrap>ul>li>a")
+    });
+    // 获取li，过滤器选择找到li，mouseout鼠标移出事件
+    $(".wrap>ul>li").mouseout(function(){
+        // $(this).children("ul").css("display","none");//隐藏
+        // hide()===css("display","none")：隐藏函数；children()：获取当前元素下的字元素，
+        $(this).children("ul").hide();//父子关系，只能触发ul标签
+        // $(this).siblings("ul").hide();//兄弟关系$(".wrap>ul>li>a")
+    });
+</script>
+</body>
+</html>

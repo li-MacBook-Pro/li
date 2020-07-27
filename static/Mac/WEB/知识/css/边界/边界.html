@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+<!--   http-equiv="refresh" content="2; url=../01-HTML+CSS.html"  -->
+    <title></title>
+    <style>
+        div{
+            width: 500px;height: 500px;
+            border-width: 1px;/*   边框宽度*/
+            border-color: olivedrab;/*  边框颜色*/
+            border-style: solid;/*  边框样式*/
+            position:relative;/*相对定位父相*/
+
+        }
+        .biankuang{
+            width: 100px;
+            height: 100px;
+            border-width: 1px;/*   边框宽度*/
+            border-color: olivedrab;/*  边框颜色*/
+            border-style: solid;/*  边框样式*/
+            /*border:1px solid black;*/
+            border-top: 4px solid #0000FF;
+            border-left: 3px solid olivedrab;
+            border-right:1px solid black;
+            border-bottom:1px solid #1acbcb;
+        }
+        .nwbj{
+
+        }
+        .nwbj1{
+            border-width: 1px;/*   边框宽度*/
+            border-color: olivedrab;/*  边框颜色*/
+            border-style: solid;/*  边框样式*/
+            width: 100px;
+            height: 100px;
+            float: left;
+            position:absolute;/*绝对定位子绝*/
+            top:100px;
+        }
+        .nwbj2{
+            border-width: 1px;/*   边框宽度*/
+            border-color: olivedrab;/*  边框颜色*/
+            border-style: solid;/*  边框样式*/
+            width: 100px;
+            height: 100px;
+            float: left;
+            position:absolute;/*绝对定位子绝*/
+            left:100px;
+        }
+
+    </style>
+</head>
+<body>
+<hr>
+<div class="biankuang "></div>
+<div class="nwbj">
+    <div class="nwbj1"></div>
+    <div class="nwbj2"></div>
+</div>
+
+
+.active{/*显示下边框*/
+	border-bottom:5px solid red;
+	/*防止下边框溢出当前盒子模型*/
+	box-sizing:border-box;
+}
+
+
+
+</body>
+</html>

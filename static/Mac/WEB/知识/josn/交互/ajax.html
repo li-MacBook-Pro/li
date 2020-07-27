@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.js"></script>
+</head>
+<body>
+<h1>计算两个数的和</h1>
+<input type="text">+<input type="text">=<input type="text">
+<button id="btn">"计算"</button>
+
+<!--将前端输入的两个数据传递到后台-->
+<script>
+    var inp=$("input");
+    var btn=$("#btn");
+    btn.click(function () {
+        //获取文本框,根据下标获取
+        var inp1=inp.eq(0).val();var inp2=inp.eq(0).val();
+        // console.log(inp1);//string类型
+        $.ajax({
+            "url":"/",//提交后台url地址
+            "type":"post",//传输的数据类型
+            "data":{"inp1":inp1,"inp2":inp2},//传递后台数据
+            "success":function (data) {
+                //data可以接受后台传递数据
+                // console.log(typeof data);
+                // console.log(data.result);
+                inp.eq(2).val(data.result);
+            }
+        });
+    });
+</script>
+</body>
+</html>

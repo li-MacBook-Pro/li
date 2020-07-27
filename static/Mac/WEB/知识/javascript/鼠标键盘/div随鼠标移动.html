@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        #box{
+            width: 10px;
+            height: 10px;
+            background-color: olivedrab;
+            position: absolute;/*相对定位*/
+        }
+    </style>
+</head>
+<body style="height: 2000px;"><!--滚动条-->
+<div id="box">
+<script type="text/javascript">
+
+    var box=document.getElementById("box");
+    document.onmousemove=function (event) {
+        var x=event.clientX;// 仅仅限制于可见页面
+        var y=event.clientY;
+        var x1=event.pageX;//  可见页面都可以移动
+        var y1=event.pageY;
+        box.style.left=x1+"px";
+        box.style.top=y1+"px";
+    }
+</script>
+</div>
+
+</body>
+</html>

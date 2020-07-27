@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<form action="/" method="post"><!--  action：/和py文件一致  -->
+    用户名
+    <input type="text" name="username">
+    密码
+    <input type="password" name="pwd">
+    <input type="submit" value="提交">
+</form>
+<script>
+    //js对象表达式
+    //josn在开发中用于数据交互
+    //json分类1、对象{}2、数组[]
+    //josn允许的值1、字符串2、数值3、布尔值4、空值5、对象6、数组
+    var obj='{"arr":[1,2,3]}';
+    var obj2='[{"name":"coco"},{"name":"baian"}]';
+    var obj3='{"name":"单身猪","age":"18"}';
+    //在json中，字符串转为js对象，JSON类型
+    //JSON.parse();//将字符串转为js对象
+    var ob=JSON.parse(obj3);
+    console.log(ob.name);
+    var a=JSON.parse(obj2);
+    console.log(a[1].name);
+    console.log(typeof a);
+    //js对象转为字符转，需要js对象作为参数，返回一个json字符串；
+    var obj4={name:"coco",age:18};
+    var str=JSON.stringify(obj4)
+    console.log(str);
+    console.log(typeof str)
+
+</script>
+</body>
+</html>

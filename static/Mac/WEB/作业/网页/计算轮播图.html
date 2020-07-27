@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" >
+    <title></title>
+<!--    <script src="测试.js"></script>-->
+    <style>
+			#outer{
+				width: 530px;
+				margin: 50px auto;/*左右居中、外边距*/
+				/*padding: 10px;!*内边距*!*/
+				text-align: center;/*文本居中*/
+                position:relative; /*    相对定位*/
+
+			}
+
+            .nav-wp {
+
+background: #ccc;
+
+border-radius: 4px;
+-moz-border-radius: 4px;
+-webkit-border-radius: 4px;
+padding: 0 20px 6px 10px;
+position: absolute;
+}
+            .nav li.cur{color: #00ff0d}
+            .nav li {
+float: left;
+margin: 10px auto;
+font-size: 20px;
+font-weight: bold;
+/*font-family: tahoma;*/
+color: #22739e;
+cursor: pointer;
+height: 22px;
+
+}
+
+            #pre{
+                color: red;
+                background: rgba(0,0,0,0);
+                border-width: 0;
+                position:absolute;
+                top:149px;
+                left:0;
+            }
+            #next{
+                color: red;
+                background: rgba(0,0,0,0);
+                border-width: 0;
+                position:absolute;
+                top:42%;
+                right:0;
+            }
+    </style>
+
+</head>
+<body>
+
+<div>
+     <script type="text/javascript">
+         // document.write("<span id=lblTime width='118px' height='11px' Font-Size='9pt' style='color:Red' ></span>") //输出显示日期的容器
+         //每1000毫秒(即1秒) 运行一次本段代码
+         // setInterval("lblTime.innerText=new Date().toLocaleString()", 1000)
+</script>
+    </div>
+
+
+
+<div id="outer">
+			<img src="../img/1.png" alt="">
+			<button id="pre" >上一张</button>
+			<button id="next">下一张</button>
+			<p id="info"></p>
+</div>
+
+<div class="nav-wp">
+    <ul id="nav" class="nav">
+        <li onclick="mySlider.pos(0)">●</li>
+        <li onclick="mySlider.pos(1)">●</li>
+        <li onclick="mySlider.pos(2)">●</li>
+        <li onclick="mySlider.pos(3)">●</li>
+        <li onclick="mySlider.pos(4)">●</li>
+    </ul>
+    <a class="next" onclick="mySlider.move()">next</a>
+</div>
+<script style="cursor:pointer" type="text/javascript">
+
+			var pre  = document.getElementById("pre");
+			var next = document.getElementById("next");
+			var img  = document.getElementsByTagName("img")[0];
+			var imgarr = ["../img/1.png","../img/2.png","../img/3.png","../img/4.png","../img/5.png"];
+			var index = 0;
+			var p = document.getElementById("info");
+			p.innerHTML = "小主，一共有"+imgarr.length+"张图片，当前显示为第"+(index+1)+"张";
+			pre.onclick = function(){
+				index--;
+				if(index<0){
+					index = imgarr.length-1;
+				}
+				img.src = imgarr[index];
+				p.innerHTML = "小主，一共有"+imgarr.length+"张图片，当前显示为第"+(index+1)+"张";
+			}
+
+			next.onclick = function(){
+				index++;
+				if(index>imgarr.length-1){
+					index = 0;
+				}
+				img.src = imgarr[index];
+				p.innerHTML = "小主，一共有"+imgarr.length+"张图片，当前显示为第"+(index+1)+"张";
+			}
+</script>
+
+<pre>
+ $(window).load(function() {
+ $('.flexslider').flexslider({
+  animation: "fade",              //String: Select your animation type, "fade" or "slide"                  图片变换方式：淡入淡出或者滑动
+  slideDirection: "horizontal",   //String: Select the sliding direction, "horizontal" or "vertical"          图片设置为滑动式时的滑动方向：左右或者上下
+  slideshow: true,                //Boolean: Animate slider automatically                                  载入页面时，是否自动播放
+  slideshowSpeed: 7000,           //Integer: Set the speed of the slideshow cycling, in milliseconds         自动播放速度毫秒
+  animationDuration: 600,         //Integer: Set the speed of animations, in milliseconds                  动画淡入淡出效果延时
+  directionNav: true,             //Boolean: Create navigation for previous/next navigation? (true/false)          是否显示左右控制按钮
+  controlNav: true,               //Boolean: Create navigation for paging control of each clide? Note: Leave true for manualControls usage              是否显示控制菜单
+  keyboardNav: true,              //Boolean: Allow slider navigating via keyboard left/right keys                       键盘左右方向键控制图片滑动
+  mousewheel: false,              //Boolean: Allow slider navigating via mousewheel                        鼠标滚轮控制制图片滑动
+  prevText: "Previous",           //String: Set the text for the "previous" directionNav item              设置文本的字符串：“以前的”directionnav项目
+  nextText: "Next",               //String: Set the text for the "next" directionNav item                   看过《文本字符串：“下”的directionnav item
+  pausePlay: false,               //Boolean: Create pause/play dynamic element                              布尔：create暂停/播放动态元素
+  pauseText: 'Pause',             //String: Set the text for the "pause" pausePlay item                     字符串：设置文字为“暂停”pauseplay项目
+  playText: 'Play',               //String: Set the text for the "play" pausePlay item                      字符串：在“玩”pauseplay项设置文本
+  randomize: false,               //Boolean: Randomize slide order                                          是否随即幻灯片
+  slideToStart: 0,                //Integer: The slide that the slider should start on. Array notation (0 = first slide)初始化第一次显示图片位置
+  animationLoop: true,            //Boolean: Should the animation loop? If false, directionNav will received "disable" classes at either end            是否循环滚动
+  pauseOnAction: true,            //Boolean: Pause the slideshow when interacting with control elements, highly recommended.                              布尔：暂停幻灯片的控制要素互动的时候，强烈推荐。
+  pauseOnHover: false,            //Boolean: Pause the slideshow when hovering over slider, then resume when no longer hovering                         布尔：暂停幻灯片演示当鼠标悬停的滑块，然后恢复时不再徘徊
+  controlsContainer: "",          //Selector: Declare which container the navigation elements should be appended too. Default container is the flexSlider element. Example use would be ".flexslider-container", "#container", etc. If the given element is not found, the default action will be taken.                  该导航元素的容器说，这应该是appended太。默认的容器是flexslider元。实例的使用将是“容器”，# .flexslider“容器”，等等。如果没有发现了元素的默认行为，将被考虑。
+  manualControls: "",             //Selector: Declare custom control navigation. Example would be ".flex-control-nav li" or "#tabs-nav li img", etc. The number of elements in your controlNav should match the number of slides/tabs.自定义控制导航
+  manualControlEvent:"",          //String:自定义导航控制触发事件:默认是click,可以设定hover
+  start: function(){},            //Callback: function(slider) - Fires when the slider loads the first slide                                       回调：功能（滑块）-当滑块加载第一个幻灯片时触发
+  before: function(){},           //Callback: function(slider) - Fires asynchronously with each slider animation                              回调：功能（滑块）-与每个滑块动画异步触发
+  after: function(){},            //Callback: function(slider) - Fires after each slider animation completes                                  回调：功能（滑块）-每个滑块动画完成后触发
+  end: function(){}               //Callback: function(slider) - Fires when the slider reaches the last slide (asynchronous)                  当滑块到达上一个幻灯片（异步）时发生火灾
+ });
+});
+</pre>
+
+</body>
+</html>

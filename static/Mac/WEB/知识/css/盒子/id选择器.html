@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{color: green;}/*  全局选择器：等级最弱  */
+        h1, h2, h3, h4, h5, h6 {color:blue;}  /*  选择器分组：等级第二弱  */
+        .button{color:red;}/*   类选择器：等级    */
+
+        #id_0{color:royalblue;}/*   id选择器：等级最高  */
+
+
+    </style>
+</head>
+<body>
+<h1 class="button">第一代：老大
+    <span class="button" id="id_0">第二代：老大
+        <span>第三代：老大</span>
+    </span>
+    <span>第二代：老二</span>
+</h1>
+<h2>第一代：老二</h2>
+<h3>第一代：老三</h3>
+<h4>第一代：老四</h4>
+<h5>第一代：老五</h5>
+<h6>第一代：老六</h6>
+</body>
+</html>

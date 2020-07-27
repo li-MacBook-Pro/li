@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			*{
+				margin: 0;
+				padding:0;
+			}
+			#box{
+				width: 100px;
+				height: 100px;
+				background-color: aqua;
+				position: absolute;
+				left: 10px;
+			}
+		</style>
+	</head>
+	<body>
+		<!--  -->
+		<button id="btn">点击按钮之后div向右移动</button>
+		<div id="box"></div>
+		<div style="width: 0;height: 1000px;border-left: 1px black solid;position: absolute;left: 800px;"></div>
+		<script type="text/javascript">
+				var btn = document.getElementById("btn");
+				var box = document.getElementById("box");
+				
+				// btn.onclick = function(){
+				// 	// 如果要让div移动，实际改变的就是left偏移量
+				// 	box.style.left = 200+"px";
+				// }
+				// 定义一个变量，用来保存定时器的标识
+			var timer;
+			btn.onclick = function(){
+				// 第一次执行没有标识，没有关系
+				 clearInterval(timer);
+				 timer = setInterval(function(){
+					// 获取div原来left值
+					// var oldValue = box.offsetLeft;
+					// box.style.left = oldValue+10+"px";
+					// 需求：让函数变得更加灵活，要修改left top width.....
+					var oldValue = parseInt(getStyle(box,"left"));//10px
+					// String 转为 number 
+					//  +"10px" --->NaN
+					// parseInt : 将合法数字取出来 遇到字母则停止，只能数字开头才有效
+					// console.log(parseInt(oldValue))
+					var newValue = oldValue + 1;
+					if(newValue>800){
+						newValue = 800;
+					}
+					// 将新值设置给box
+					box.style.left = newValue+"px";
+					
+					// 当div移动到800px时，停止定时器
+					if(newValue==800){
+						clearInterval(timer);
+					}
+						
+				},30);
+				}
+				// 获取某一个元素的样式
+				// obj:某一个元素
+				// name:样式名
+				function getStyle(obj,name){
+					// window.getComputedStyle();可以读取当前元素的样式，
+					// 1.参数1:要获取样式的元素 参数2：可以传递一个伪元素
+					// 该函数会返回当前元素的所有样式，对象
+					 var o = getComputedStyle(obj,null);
+					 return o[name];
+					 // o.width;
+					// 10px + 10px; = 10px10px
+				}
+		
+		
+	
+		</script>
+	</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<h1>a使用</h1>
+<a href="https://www.w3school.com.cn/html/html_elements.asp" target="_blank">样式</a>及
+<a href="https://www.w3school.com.cn/html/html_basic.asp" target="_blank">属性</a>
+<a href="mailto:m17686520521@163.com">链接到邮箱</a>
+<a href="ftp://ftp.tsinghua.edu.cn">外部下载地址</a>
+<a href="telnet://地址">Telnet常常用来登录一些BBS网站，也是一种远程登录方式。</a>
+<a href="/">如果要在网站中提供下载资料，就需要为文件提供下载链接，在某些网站中只需要单击一个链接就可以自动下载文件。</a>
+<h1>img使用</h1>
+<img src="../../../Mac/play/调用/game/images/1.jpg" alt="哎呀！图片出错了。--吴" height="108" width="144"><br>
+title   hover时显示文本<br>
+align 已废弃 HTML4.01, 已废弃 HTML5 使用 vertical-align CSS 属性<br>
+图像相对于它周围上下文的对齐。<br>
+alt<br>
+这个属性定义了描述图像的替换文本。用户将看到这个显示，如果图像的URL是错误的，该图像不在 支持的格式 列表中，或者如果图像还没有被下载。
+使用说明： 省略这个属性表明该图像是内容的关键部分，但没有等效的文本可用。把这个属性设置为空字符串，表明该图像不是内容的关键部分，
+非可视化浏览器在渲染的时候可能会忽略它。<br>
+<br>
+border 已废弃 HTML4.01, 已废弃 HTML5<br>
+图像周围的边框宽度。<br>
+crossorigin HTML5<br>
+这个枚举属性表明是否必须使用 CORS 完成相关图像的抓取。启用CORS的图像 在 <>canvas <>元素中可以重复使用而不会被污染。允许的值有：<br>
+anonymous<br>
+执行一个跨域的请求（比如，有 Origin: HTTP header）。但是没有发送证书（比如，没有 cookie，没有 X.509 证书，没有 HTTP 基本的授权认证）。
+如果服务器没有给源站证书（没有设置 Access-Control-Allow-Origin: HTTP头），图像会被污染而且它的使用会被限制。<br>
+use-credentials<br>
+一个有证书的跨域请求（比如，有 Origin: HTTP header）被发送 （比如，a cookie, a certificate, and HTTP Basic authentication is performed）。
+如果服务器没有给源站发送证书（通过 Access-Control-Allow-Credentials: HTTP header），图像将会被污染，且它的使用会受限制。<br>
+当用户并未显式使用本属性时，默认不使用 CORS 发起请求(例如，不会向服务器发送 HTTP 头部信息)，用以防止其在<>canvas<>中的使用。
+如果无效，默认当做anonymous关键字生效。更多信息，请查看 CORS 属性设置 。<br>
+height<br>
+图像的高度，在 HTML5 中的单位是 CSS 像素，在 HTML 4 中可以是像素也可以是百分比。width/height只指定一个值，则另一个会根据原始图像进行赋值<br>
+width<br>
+图像的宽度，在 HTML5 中单位是 CSS 像素， 在 HTML 4 中可以是像素也可以是百分比。<br>
+hspace 已废弃 HTML4.01, 已废弃 HTML5<br>
+插入到图像的左侧和右侧的空白像素的值。<br>
+ismap<br>
+这个布尔属性表示图像是否是服务器端map的一部分。如果是， 那么点击的精准坐标将会被发送到服务器。<br>
+使用说明：只有在<>img<> 元素是一个拥有有效 href 属性的 <>a<> 元素的后代元素的情况下，这个属性才会被允许使用。<br>
+<br>
+longdescHTML 4 only<br>
+URL 描述要显示图像的URL描述，是对 alt 文本的补充。<br>
+name 已废弃 HTML4.01, 已废弃 HTML5<br>
+元素的名字。在 HTML 4 只向后兼容。 使用 id 属性替代。<br>
+sizesHTML5<br>
+表示资源大小的以逗号隔开的一个或多个字符串。每一个资源大小包括：<br>
+一个媒体条件。最后一项一定是被忽略的。<br>
+一个资源尺寸的值。<br>
+资源尺寸的值被用来指定图像的预期尺寸。当srcset使用 'w' 描述符时，用户代理使用当前图像大小来选择srcset中合适的一个图像URL。
+被选中的尺寸影响图像的显示大小（如果没有CSS样式被应用的话）。如果没有设置srcset属性，或者没值，那么sizes属性也将不起作用。<br>
+<br>
+src<br>
+图像的 URL，这个属性对 <>img<> 元素来说是必需的。在支持 srcset 的浏览器中，src 被当做拥有一个像素密度的描述符 1x 的候选图像处理，
+除非一个图像拥有这个像素密度描述符已经被在 srcset 或者 srcset 包含 'w' 描述符中定义了.<br>
+srcsetHTML5<br>
+以逗号分隔的一个或多个字符串列表表明一系列用户代理使用的可能的图像。每一个字符串由以下组成：<br>
+一个图像的 URL。<br>
+可选的，空格后跟以下的其一：<br>
+一个宽度描述符，这是一个正整数，后面紧跟 'w' 符号。该整数宽度除以sizes属性给出的资源（source）大小来计算得到有效的像素密度，即换算成和x描述符等价的值。<br>
+一个像素密度描述符，这是一个正浮点数，后面紧跟 'x' 符号。<br>
+如果没有指定源描述符，那它会被指定为默认的 1x。<br>
+
+在相同<br>的 srcset 属性中混合使用宽度描述符和像素密度描述符时，会导致该值无效。重复的描述符（比如，两个源 在相同的srcset两个源都是 '2x'）也是无效的。<br>
+<br>
+浏览器选择在给出的时间点显示大部分 adequate 图片。<br>
+<br>
+usemap<br>
+与元素相关联的的 image map 的部分 URL（以 '#' 开始的部分）。<br>
+使用说明： 如果 <>img<> 元素是 <>a<> 或 <>button<> 元素的后代元素则不能使用这个属性。<br>
+<br>
+vspace 已废弃 HTML4.01, 已废弃 HTML5<br>
+插入到图像的上方和下方的空白像素的数组。<br>
+
+<h1>图片链接</h1>
+<img src="../../../Mac/play/调用/game/images/1.jpg" width="428" height="303" border="0" usemap="#Map" />￼ 
+<map name="Map">
+    <area shape="rect" coords="247,42,337,74" href="index.html">￼ 
+    <area shape="circle" coords="180,104,22" href="../../../Mac/play/调用/game/images/1.jpg">￼ 
+    <area  shape="poly"  coords="115,175,105,184,108,197,110,201,114,207,127,214,126,
+     21 8,127,225,129,231,149,219,168,217,170,200,171,215,171,201,170,200,174,215,167,199,
+     172,199,166, 192,175,187,181,186,157,182,144,177,135,175,115,175" href="../../../Mac/play/调用/game/images/1.jpg">￼ 
+</map>￼
+
+
+</body>
+</html>
